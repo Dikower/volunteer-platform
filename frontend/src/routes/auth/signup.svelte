@@ -53,7 +53,7 @@
 
   async function submit() {
     if (!validate()) return;
-    bridge.post({ path: "users/create", json: { username, password }, store: rsp });
+    bridge.post({ path: "users/", json: { username, password }, store: rsp });
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const data = await $rsp.promise;
     if (data.detail === "User already exists") {
@@ -64,7 +64,7 @@
     } else {
       $session.token = data.access_token;
       cookie.set("token", data.access_token);
-      goto("/users/self");
+      goto("/user/");
     }
   }
 </script>

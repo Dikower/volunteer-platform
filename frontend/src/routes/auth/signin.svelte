@@ -53,7 +53,7 @@
     } else {
       $session.token = data.access_token;
       cookie.set("token", data.access_token);
-      goto("/users/self");
+      goto("/user/");
     }
   }
 </script>
