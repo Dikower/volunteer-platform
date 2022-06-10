@@ -9,9 +9,11 @@
   let theme: any = "light";
 
   let companyPathList = [
+    {href: "/vacancies/list", name: "vacancies list"},
     {href: "/company", name: "company"}
   ];
   let userPathList = [
+    {href: "/vacancies/list", name: "vacancies list"},
     {href: "/user", name: "user"},
     {href: "/user/achievements", name: "achievements"}
   ];
@@ -20,7 +22,7 @@
     {href: "/auth/signup", name: "signup"}
   ]
 
-  let authorizationState = false;
+  let authorizationState = true;
   
   onMount(() => {
     theme = localStorage.getItem("theme");
@@ -33,7 +35,7 @@
   }
 </script>
 
-<header class="flex justify-between p-4" data-theme={theme}>
+<header class="flex justify-between p-4 shadow mb-1" data-theme={theme}>
 	
   <a sveltekit:prefetch href={"/"} class={$page.url.pathname === "/" ? "mx-2 font-bold py-2" : "mx-2 py-2"}>main</a>
 
