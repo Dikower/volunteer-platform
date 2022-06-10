@@ -1,29 +1,15 @@
 <script lang="ts">
   import "../app.css";
-  import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-  import Fa from "svelte-fa";
+  import Header from "$lib/header/Header.svelte"; 
+  import { onMount } from "svelte";
 
-  let theme: "light" | "night" = "light";
+  let theme: any = "light";
+  onMount(() => {
+    theme = localStorage.getItem("theme");
+  })
 </script>
 
-
-<nav>
-  {#if theme === 'light'}
-    <button
-      class="btn btn-ghost btn-circle"
-      on:click={() => theme = 'night'}
-    >
-      <Fa icon={faSun} size="lg" />
-    </button>
-  {:else}
-    <button
-      class="btn btn-ghost btn-circle"
-      on:click={() => theme = 'light'}
-    >
-      <Fa icon={faMoon} size="lg" />
-    </button>
-  {/if}
-</nav>
+<Header on:themeChange = {(newTheme) => theme = newTheme.detail}/>
 
 <div data-theme={theme}>
   <slot />
