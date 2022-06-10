@@ -4,8 +4,9 @@ import RiveRuntime
 struct ContentView: View {
     @State var show = false
     @State var isOpen = false
+    @ObservedObject var viewModel: ViewModel
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
-
+    
     var body: some View {
         ZStack {
             Color(hex: "17203A").ignoresSafeArea()
@@ -80,14 +81,21 @@ struct ContentView: View {
                 }
             
             if show {
-                OnboardingView(show: $show)
-                    .background(.white)
-                    .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                    .shadow(color: .black.opacity(0.5), radius: 40, x: 0, y: 40)
-                    .ignoresSafeArea(.all, edges: .top)
-                    .offset(y: show ? -10 : 0)
-                    .zIndex(1)
-                    .transition(.move(edge: .top))
+                Group {
+                    if UserDataService.isLoggedIn {
+                        ProfileView(show: $show, viewModel: viewModel)
+                    }
+                    else {
+                        OnboardingView(show: $show, viewModel: viewModel)
+                    }
+                }
+                .background(.white)
+                .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .shadow(color: .black.opacity(0.5), radius: 40, x: 0, y: 40)
+                .ignoresSafeArea(.all, edges: .top)
+                .offset(y: show ? -10 : 0)
+                .zIndex(1)
+                .transition(.move(edge: .top))
             }
         }
     }
