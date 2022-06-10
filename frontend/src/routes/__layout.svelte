@@ -11,6 +11,6 @@
 
 <Header on:themeChange = {(newTheme) => theme = newTheme.detail}/>
 
-<div data-theme={theme}>
+<div data-theme={theme} class="w-full h-screen">
   <slot />
 </div>
