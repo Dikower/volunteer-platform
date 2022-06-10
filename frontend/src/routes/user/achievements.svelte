@@ -1,6 +1,5 @@
 <script>
-
-  import Achievement from '$lib/components/achievement.svelte';
+  import Achievement from '$lib/components/user/Achievement.svelte';
 
   // const allAchievements = client.query({ query: GET_ALL_ACHIEVEMENTS });
   const allAchievements = {
