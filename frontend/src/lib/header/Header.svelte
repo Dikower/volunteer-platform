@@ -9,12 +9,18 @@
   let theme: any = "light";
 
   let companyPathList = [
-    {href: "/company", name: "company"},
-  ]
+    {href: "/company", name: "company"}
+  ];
   let userPathList = [
     {href: "/user", name: "user"},
-    {href: "/user/achievements", name: "achievements"},
+    {href: "/user/achievements", name: "achievements"}
+  ];
+  let authPathList = [
+    {href: "/auth/signin", name: "signin"},
+    {href: "/auth/signup", name: "signup"}
   ]
+
+  let authorizationState = false;
   
   onMount(() => {
     theme = localStorage.getItem("theme");
@@ -32,28 +38,48 @@
   <a sveltekit:prefetch href={"/"} class={$page.url.pathname === "/" ? "mx-2 font-bold py-2" : "mx-2 py-2"}>main</a>
 
   <!-- разделить после авторизации -->
+
   <div class="flex flex-col">
-    <div class="text-sm flex">
-      {#each companyPathList as path}
-        <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
-      {/each}
-    </div>
-    <div class="text-sm flex">
-      {#each userPathList as path}
-        <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
-      {/each}
-    </div>
+    {#if authorizationState}
+      <div class="text-sm flex">
+        {#each companyPathList as path}
+          <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
+        {/each}
+      </div>
+      <div class="text-sm flex">
+        {#each userPathList as path}
+          <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
+        {/each}
+      </div>
+    {:else}
+      <div class="text-sm flex">
+        {#each authPathList as path}
+          <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
+        {/each}
+      </div>
+    {/if}
   </div>
 
-  {#if theme === 'light'}
-    <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("night")}}>
-      <Fa icon={faSun} size="lg" />
-    </button>
-  {:else}
-    <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("light")}} >
-      <Fa icon={faMoon} size="lg" />
-    </button>
-  {/if}
+
+
+  <div>
+    {#if authorizationState}
+      <button on:click={() => {authorizationState = false}}>logOut</button>
+    {:else}
+      <button on:click={() => {authorizationState = true}}>SignIn</button>
+    {/if}
+
+    {#if theme === 'light'}
+      <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("night")}}>
+        <Fa icon={faSun} size="lg" />
+      </button>
+    {:else}
+      <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("light")}} >
+        <Fa icon={faMoon} size="lg" />
+      </button>
+    {/if}
+  </div>
+ 
 </header>
 
 
