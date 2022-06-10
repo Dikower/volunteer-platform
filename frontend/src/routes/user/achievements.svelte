@@ -1,3 +1,7 @@
+<script context="module">
+  export const prerender = false;
+</script>
+
 <script>
   import Achievement from '$lib/components/user/Achievement.svelte';
 
@@ -21,7 +25,7 @@
           "name": "Эко-энергетик",
           "reason": "Ознакомиться с курсами по альтернативными источниками энергии",
           "pic": {
-            "url": "/animations/84872-disconnected.json",
+            "url": "/animations/84872_disconnected.json",
             "__typename": "UploadFile"
           },
           "progressbar": 100,
@@ -32,7 +36,7 @@
           "name": "Эко-профи",
           "reason": "Прошёл все курсы на платформе",
           "pic": {
-            "url": "/animations/86299-3x3-cube-loader-3.json",
+            "url": "/animations/86299_3x3_cube_loader.json",
             "__typename": "UploadFile"
           },
           "progressbar": 100,
@@ -43,7 +47,7 @@
           "name": "Эко-практик",
           "reason": "Прошел курс с прикладным содержанием ",
           "pic": {
-            "url": "/animations/bouncing-shapes.json",
+            "url": "/animations/bouncing_shapes.json",
             "__typename": "UploadFile"
           },
           "progressbar": 100,
@@ -54,7 +58,7 @@
           "name": "На экваторе пути ",
           "reason": "Прошел 50% курсов на платформе",
           "pic": {
-            "url": "/animations/online-learning.json",
+            "url": "/animations/online_learning.json",
             "__typename": "UploadFile"
           },
           "progressbar": 100,
@@ -65,7 +69,7 @@
           "name": "Эко-активист ",
           "reason": "Посещение платформы курсов на протяжение двух недель",
           "pic": {
-            "url": "/animations/work-team.json",
+            "url": "/animations/work_team.json",
             "__typename": "UploadFile"
           },
           "progressbar": 0,
