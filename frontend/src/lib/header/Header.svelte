@@ -62,8 +62,6 @@
     {/if}
   </div>
 
-
-
   <div>
     {#if authorizationState}
       <button on:click={() => {authorizationState = false}}>logOut</button>
