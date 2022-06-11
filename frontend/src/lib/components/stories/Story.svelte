@@ -2,7 +2,8 @@
   import { fade } from "svelte/transition";
 
   export let title = "Посетили вершину вулкана";
-  export let opened = true;
+  export let watched = false;
+  export let opened = false;
   export let author = {
     name: "Кувшинов Марк",
     img: "https://sun4-11.userapi.com/s/v1/ig2/0wydB4v0K9WTkRyxIL-jvzkYS_8WwssbFZLaMZPpIEWmjhQai2p_oqYiOxkF84Npl-Wqm8Iq3M6Ya7lxaTkyrepT.jpg?size=1066x1600&quality=96&type=album"
@@ -21,6 +22,7 @@
 
   function open() {
     opened = true;
+    watched = true;
     ticker = setInterval(() => {
       tickVal++;
       if (tickVal > duration) {
@@ -52,8 +54,8 @@
     let rect = storyCard.getBoundingClientRect();
 
     let x = e.x - rect.left;
-    let half = (rect.right - rect.left) / 2
-    if ( x < half && nav > 0) {
+    let half = (rect.right - rect.left) / 2;
+    if (x < half && nav > 0) {
       nav--;
       tickVal = 0;
     } else if (x > half && nav + 1 < screens.length) {
@@ -66,8 +68,10 @@
   let storyCard;
 </script>
 
-<div class="w-[100px] h-[100px] border-accent m-4 grid place-items-center cursor-pointer" on:click={open}>
-  <img alt="story" class="object-fill w-full h-full rounded-xl" src={screens[0]}>
+<div class=" w-[100px] h-[100px] border-accent m-4 grid place-items-center cursor-pointer" on:click={open}>
+  <img
+    alt="story" class:border-accent={!watched}
+    class="border-solid border-2 rounded-xl object-fill w-full h-full rounded-xl" src={screens[0]}>
   <h2 class="absolute w-[80px] text-slate-100 font-bold">{title}</h2>
 </div>
 
