@@ -5,7 +5,7 @@ struct MoscowCityHackAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ViewModel())
         }
     }
     
