@@ -10,7 +10,8 @@
 
   let companyPathList = [
     {href: "/vacancies/list", name: "vacancies list"},
-    {href: "/company", name: "company"}
+    {href: "/company", name: "company"},
+    {href: "/constructor/new", name: "constructor"}
   ];
   let userPathList = [
     {href: "/vacancies/list", name: "vacancies list"},
@@ -28,7 +29,7 @@
     theme = localStorage.getItem("theme");
   })
   
-  function changeTheme(color: "night" | "light"){
+  function changeTheme(color: "dark" | "light"){
     theme = color; 
     localStorage.setItem("theme", color); 
     dispatch("themeChange", color);
@@ -70,7 +71,7 @@
     {/if}
 
     {#if theme === 'light'}
-      <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("night")}}>
+      <button class="btn btn-ghost btn-circle" on:click={() => {changeTheme("dark")}}>
         <Fa icon={faSun} size="lg" />
       </button>
     {:else}

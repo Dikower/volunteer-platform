@@ -1,15 +1,19 @@
 <script>
-  import lottie from 'lottie-web';
-  import { onMount } from 'svelte';
+  import lottie from "lottie-web";
+  import { onMount } from "svelte";
 
-  export let name, reason, pic, active;
+  export let name = 'Мастер';
+  export let reason = '12 активных месяцев без перерыва' ;
+  export let pic = '/animations/work_team.json';
+  // export let active = true;
+  export let progress = 10;
+  export let total = 12;
   let player;
-  let hover = false;
 
   onMount(() => {
     lottie.loadAnimation({
       container: player, // the dom element that will contain the animation
-      renderer: 'svg',
+      renderer: "svg",
       loop: true,
       autoplay: true,
       path: pic // the path to the animation json
@@ -17,18 +21,15 @@
   });
 </script>
 
-<div
-  class='shadow rounded-xl m-4 flex p-4 w-5/12 m-auto z-0'
-  on:mouseenter={() => hover = true}
-  on:mouseleave={() => hover = false}
->
-  <div class='relative m-auto w-sm'>
-    <div bind:this={player} class='z-0'></div>
-    <h2 class='text-center text-2xl m-3'>{name}</h2>
-    {#if hover}
-      <div class='absolute left-0 right-0 top-0 bottom-0 m-auto flex items-center content-center justify-center'>
-        <p class='h-10 mb-10 bg-blue-200 text-center color text-gray-600 '>{reason}</p>
-      </div>
-    {/if}
+
+<div class="p-2 my-2 flex border border-info-content rounded-lg">
+  <div bind:this={player} class="w-2/5"></div>
+  <div class="ml-2 w-3/5">
+    <h2 class="font-bold text-accent-content">{name}</h2>
+    <h3 class="text-info-content text-2xs">{reason}</h3>
+    <div>
+      <progress class="progress progress-secondary w-4/6" value={progress} max={total}></progress>
+      <span class="text-info-content text-2xs">{progress} / {total} </span>
+    </div>
   </div>
 </div>

@@ -1,5 +1,8 @@
 <script>
   import { fade } from "svelte/transition";
+  import Fa from "svelte-fa";
+  import { faXmark } from "@fortawesome/free-solid-svg-icons";
+  import { createEventDispatcher } from "svelte";
 
   export let title = "Посетили вершину вулкана";
   export let watched = false;
@@ -15,14 +18,15 @@
     "https://proprikol.ru/wp-content/uploads/2020/04/kartinki-vulkany-39.jpg"
   ];
   export let nav = 0;
-  export let duration = 200;
+  export let duration = 400;
   let ticker;
   let tickVal = 0;
+  const dispatch = createEventDispatcher();
 
-
-  function open() {
+  export function open() {
     opened = true;
     watched = true;
+    dispatch("open");
     ticker = setInterval(() => {
       tickVal++;
       if (tickVal > duration) {
@@ -58,9 +62,13 @@
     if (x < half && nav > 0) {
       nav--;
       tickVal = 0;
+    } else if (x < half && nav === 0) {
+      dispatch("prev");
     } else if (x > half && nav + 1 < screens.length) {
       nav++;
       tickVal = 0;
+    } else if (x > half && nav + 1 === screens.length) {
+      dispatch("next");
     }
   }
 
@@ -68,18 +76,18 @@
   let storyCard;
 </script>
 
-<div class=" w-[100px] h-[100px] border-accent m-4 grid place-items-center cursor-pointer" on:click={open}>
+<div class="relative border-accent mr-4 grid place-items-center cursor-pointer" on:click={open}>
   <img
     alt="story" class:border-accent={!watched}
     class="border-solid border-2 rounded-xl object-fill w-full h-full rounded-xl" src={screens[0]}>
-  <h2 class="absolute w-[80px] text-slate-100 font-bold">{title}</h2>
+  <h2 class="absolute w-[100px] text-slate-100 font-bold text-md">{title}</h2>
 </div>
 
 {#if opened}
   <div
     bind:this={cover}
     transition:fade={{duration: 100}}
-    class="fixed w-screen h-screen top-0 left-0 grid place-items-center cover-bg"
+    class="z-10 fixed w-screen h-screen top-0 left-0 grid place-items-center cover-bg"
     on:click={(e) => {if (e.target === cover) close()}}
   >
     <div
@@ -88,12 +96,11 @@
         relative
         w-full h-full
         artboard sm:phone-2
-        rounded-xl bg-gray-900
+        rounded-xl bg-black
       "
       on:click={storyClick}
     >
-      <div class="absolute w-full">
-
+      <div class="absolute w-full z-10">
         <div class="flex justify-center mt-3 w-full">
           {#each Array(screens.length) as _, i}
             {#if i < nav}
@@ -105,16 +112,21 @@
             {/if}
           {/each}
         </div>
-        <div class="flex mt-2 items-center">
-          <div class="avatar mx-2">
-            <div class="w-10 rounded-full">
-              <img alt="avatar" class="w-10 h-10 object-scale-down rounded-xl" src={author.img}>
+        <div class="flex justify-between content-start w-full">
+          <div class="flex mt-2 items-center">
+            <div class="avatar mx-2">
+              <div class="w-10 rounded-full">
+                <img alt="avatar" class="w-10 h-10 object-scale-down rounded-xl" src={author.img}>
+              </div>
+            </div>
+            <div class="flex flex-col mb-2">
+              <h2 class="text-white">{author.name}</h2>
+              <h3 class="text-slate-300 text-2xs">{when}</h3>
             </div>
           </div>
-          <div class="flex flex-col mb-2">
-            <h2 class="text-white">{author.name}</h2>
-            <h3 class="text-slate-300 text-2xs">{when}</h3>
-          </div>
+          <button class="text-white mx-10 sm:mx-5 text-lg" on:click={close}>
+            <Fa icon={faXmark} />
+          </button>
         </div>
       </div>
       <img class="object-contain w-full h-full" src={screens[nav]}>
