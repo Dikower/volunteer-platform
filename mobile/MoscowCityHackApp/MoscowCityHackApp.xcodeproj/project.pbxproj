@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33BD1082854B1C500AE3FFA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1072854B1C500AE3FFA /* SearchBar.swift */; };
+		D33BD10A2854BBCB00AE3FFA /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1092854BBCB00AE3FFA /* ActivityCard.swift */; };
+		D33BD10C2854BDB300AE3FFA /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD10B2854BDB300AE3FFA /* Activity.swift */; };
+		D33BD10E2854F05700AE3FFA /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD10D2854F05700AE3FFA /* StoriesView.swift */; };
 		D3826F1A2853A56D00BFD607 /* MoscowCityHackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F192853A56D00BFD607 /* MoscowCityHackAppApp.swift */; };
 		D3826F1E2853A57000BFD607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3826F1D2853A57000BFD607 /* Assets.xcassets */; };
 		D3826F212853A57000BFD607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3826F202853A57000BFD607 /* Preview Assets.xcassets */; };
@@ -38,9 +42,15 @@
 		D3AEEC742853D7A60069C74D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC732853D7A60069C74D /* UserDataService.swift */; };
 		D3AEEC762853DA000069C74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC752853DA000069C74D /* ProfileView.swift */; };
 		D3AEEC782853DFEA0069C74D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC772853DFEA0069C74D /* ViewModel.swift */; };
+		D3CE2FE328549D4B0044548B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D3CE2FE228549D4B0044548B /* Lottie */; };
+		D3CE2FE52854A0550044548B /* PickInterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE2FE42854A0550044548B /* PickInterestsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D33BD1072854B1C500AE3FFA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		D33BD1092854BBCB00AE3FFA /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
+		D33BD10B2854BDB300AE3FFA /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		D33BD10D2854F05700AE3FFA /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		D3826F162853A56D00BFD607 /* MoscowCityHackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscowCityHackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3826F192853A56D00BFD607 /* MoscowCityHackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscowCityHackAppApp.swift; sourceTree = "<group>"; };
 		D3826F1D2853A57000BFD607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +82,7 @@
 		D3AEEC732853D7A60069C74D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		D3AEEC752853DA000069C74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D3AEEC772853DFEA0069C74D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D3CE2FE42854A0550044548B /* PickInterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickInterestsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3826F322853B3C600BFD607 /* RiveRuntime in Frameworks */,
+				D3CE2FE328549D4B0044548B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +171,7 @@
 			children = (
 				D3826F492853BEFB00BFD607 /* Course.swift */,
 				D3826F482853BEFB00BFD607 /* CourseSection.swift */,
+				D33BD10B2854BDB300AE3FFA /* Activity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +181,8 @@
 			children = (
 				D3826F532853BF4B00BFD607 /* HCard.swift */,
 				D3826F542853BF4B00BFD607 /* VCard.swift */,
+				D33BD1072854B1C500AE3FFA /* SearchBar.swift */,
+				D33BD1092854BBCB00AE3FFA /* ActivityCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -179,6 +194,8 @@
 				D3826F592853BFBB00BFD607 /* HomeView.swift */,
 				D3826F582853BFBA00BFD607 /* OnboardingView.swift */,
 				D3AEEC752853DA000069C74D /* ProfileView.swift */,
+				D3CE2FE42854A0550044548B /* PickInterestsView.swift */,
+				D33BD10D2854F05700AE3FFA /* StoriesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +254,7 @@
 			name = MoscowCityHackApp;
 			packageProductDependencies = (
 				D3826F312853B3C600BFD607 /* RiveRuntime */,
+				D3CE2FE228549D4B0044548B /* Lottie */,
 			);
 			productName = MoscowCityHackApp;
 			productReference = D3826F162853A56D00BFD607 /* MoscowCityHackApp.app */;
@@ -268,6 +286,7 @@
 			mainGroup = D3826F0D2853A56D00BFD607;
 			packageReferences = (
 				D3826F302853B3C500BFD607 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				D3CE2FE128549D4B0044548B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = D3826F172853A56D00BFD607 /* Products */;
 			projectDirPath = "";
@@ -310,10 +329,13 @@
 				D3826F5B2853BFBB00BFD607 /* HomeView.swift in Sources */,
 				D3826F622853BFE600BFD607 /* TabBar.swift in Sources */,
 				D3826F602853BFE600BFD607 /* SideMenu.swift in Sources */,
+				D33BD10A2854BBCB00AE3FFA /* ActivityCard.swift in Sources */,
 				D3826F352853BC9300BFD607 /* Extensions.swift in Sources */,
 				D3826F372853BCDF00BFD607 /* SignInView.swift in Sources */,
 				D3826F562853BF4B00BFD607 /* VCard.swift in Sources */,
+				D33BD10E2854F05700AE3FFA /* StoriesView.swift in Sources */,
 				D3826F4F2853BF1900BFD607 /* CustomButton.swift in Sources */,
+				D3CE2FE52854A0550044548B /* PickInterestsView.swift in Sources */,
 				D3AEEC762853DA000069C74D /* ProfileView.swift in Sources */,
 				D3826F502853BF1900BFD607 /* CustomFont.swift in Sources */,
 				D3AEEC742853D7A60069C74D /* UserDataService.swift in Sources */,
@@ -321,7 +343,9 @@
 				D3826F1A2853A56D00BFD607 /* MoscowCityHackAppApp.swift in Sources */,
 				D3826F612853BFE600BFD607 /* ContentView.swift in Sources */,
 				D3826F5A2853BFBB00BFD607 /* OnboardingView.swift in Sources */,
+				D33BD1082854B1C500AE3FFA /* SearchBar.swift in Sources */,
 				D3826F4A2853BEFB00BFD607 /* CourseSection.swift in Sources */,
+				D33BD10C2854BDB300AE3FFA /* Activity.swift in Sources */,
 				D3826F512853BF1900BFD607 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +559,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D3CE2FE128549D4B0044548B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +574,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D3826F302853B3C500BFD607 /* XCRemoteSwiftPackageReference "rive-ios" */;
 			productName = RiveRuntime;
+		};
+		D3CE2FE228549D4B0044548B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3CE2FE128549D4B0044548B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

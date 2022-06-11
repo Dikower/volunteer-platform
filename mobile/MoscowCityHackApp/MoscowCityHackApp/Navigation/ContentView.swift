@@ -4,6 +4,7 @@ import RiveRuntime
 struct ContentView: View {
     @State var show = false
     @State var isOpen = false
+    @State var showStoriesView = false
     @ObservedObject var viewModel: ViewModel
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
     
@@ -18,7 +19,7 @@ struct ContentView: View {
                 .rotation3DEffect(.degrees(isOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
                 .ignoresSafeArea(.all, edges: .top)
             
-            HomeView()
+            HomeView(showStoriesView: $showStoriesView)
                 .safeAreaInset(edge: .bottom) {
                     Color.clear.frame(height: 80)
                 }
@@ -97,6 +98,15 @@ struct ContentView: View {
                 .zIndex(1)
                 .transition(.move(edge: .top))
             }
+            
+            if showStoriesView {
+                StoriesView(imageNames: ["nature", "children", "animals"], showStoriesView: $showStoriesView)
+                    .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .shadow(color: .black.opacity(0.5), radius: 40, x: 0, y: 40)
+                    .zIndex(1)
+                    .transition(.move(edge: .bottom))
+            }
+            
         }
     }
 }

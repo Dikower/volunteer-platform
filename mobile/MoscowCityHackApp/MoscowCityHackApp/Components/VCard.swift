@@ -2,6 +2,7 @@ import SwiftUI
 
 struct VCard: View {
     var course: Course
+    var cardColor: Color
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -12,9 +13,7 @@ struct VCard: View {
             Text(course.subtitle)
                 .opacity(0.7)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Text(course.caption.uppercased())
-                .customFont(.footnote2)
-                .opacity(0.7)
+            
             Spacer()
             HStack {
                 ForEach(Array([4, 5, 6].shuffled().enumerated()), id: \.offset) { index, number in
@@ -28,15 +27,15 @@ struct VCard: View {
         }
         .foregroundColor(.white)
         .padding(30)
-        .frame(width: 260, height: 310)
-        .background(.linearGradient(colors: [course.color.opacity(1), course.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        .shadow(color: course.color.opacity(0.3), radius: 8, x: 0, y: 12)
-        .shadow(color: course.color.opacity(0.3), radius: 2, x: 0, y: 1)
-        .overlay(
-            course.image
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .padding(20)
+        .frame(width: 260, height: 280)
+        .background(
+            Image("recomend_background")
+                .resizable()
+                .scaledToFill()
+                .overlay(cardColor.opacity(0.5))
         )
+        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .shadow(color: cardColor.opacity(0.3), radius: 8, x: 0, y: 12)
+        .shadow(color: cardColor.opacity(0.3), radius: 2, x: 0, y: 1)
     }
 }

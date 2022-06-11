@@ -71,13 +71,6 @@ struct ProfileView: View {
                 .customFont(.title3)
                 .opacity(0.7)
             
-//            Text("Don’t skip design. Learn design and code, by building real apps with React and Swift. Complete courses about the best tools.")
-//                .customFont(.body)
-//                .opacity(0.7)
-//                .frame(maxWidth: .infinity, alignment: .leading)
-            
-//            Spacer()
-            
             Text("Вы можете удалить аккаунт.")
                 .customFont(.footnote)
                 .opacity(0.7)
