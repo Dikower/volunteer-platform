@@ -1,4 +1,6 @@
 <script lang="ts">
+import { goto } from "$app/navigation";
+
 import { onMount, createEventDispatcher } from "svelte";
 const dispatch = createEventDispatcher();
 
@@ -6,10 +8,17 @@ const dispatch = createEventDispatcher();
   onMount(() => {
     // console.log(data)
   })
+  function openVacancie(event: any){
+    if(event.target.id !== ""){
+      dispatch("addFilter", event.target.id);
+    } else {
+      goto("/vacancies/" + data.id)
+    }
+  }
 </script>
 
 
-<div class="card w-10/12 mx-auto bg-base-100 mt-10 flex-row justify-between shadow hover:shadow-md p-4">
+<div class="card w-10/12 mx-auto bg-base-100 mt-10 flex-row justify-between shadow hover:shadow-md p-4" on:click={(event) => openVacancie(event)}>
   <div class="w-full flex flex-col pt-2 ">
     <div class="flex mb-1 ml-1">
       <p class="font-bold mt-auto">{data.name}</p>
@@ -21,7 +30,7 @@ const dispatch = createEventDispatcher();
 
     <div class="mt-auto">
       {#each data.skills as skill}
-        <button class="btn btn-outline btn-warning btn-xs m-1" on:click={() => {dispatch("addFilter", skill);}}>{skill}</button>
+        <button class="btn btn-outline btn-warning btn-xs m-1" id={skill} on:click={() => {dispatch("addFilter", skill);}}>{skill}</button>
       {/each}
     </div>
   </div>
