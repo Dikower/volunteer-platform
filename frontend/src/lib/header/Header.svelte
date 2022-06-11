@@ -35,7 +35,7 @@
   }
 </script>
 
-<header class="flex justify-between p-4 shadow" data-theme={theme}>
+<header class="flex justify-between p-4 shadow mb-1 absolute w-screen" data-theme={theme}>
 	
   <a sveltekit:prefetch href={"/"} class={$page.url.pathname === "/" ? "mx-2 font-bold py-2" : "mx-2 py-2"}>main</a>
 

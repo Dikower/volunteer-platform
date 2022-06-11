@@ -35,6 +35,9 @@
 		D3826F672853C24500BFD607 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3826F642853C24500BFD607 /* Inter-Regular.ttf */; };
 		D3826F682853C24500BFD607 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3826F652853C24500BFD607 /* Inter-SemiBold.ttf */; };
 		D3826F692853C24500BFD607 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3826F662853C24500BFD607 /* Poppins-Bold.ttf */; };
+		D3AEEC742853D7A60069C74D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC732853D7A60069C74D /* UserDataService.swift */; };
+		D3AEEC762853DA000069C74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC752853DA000069C74D /* ProfileView.swift */; };
+		D3AEEC782853DFEA0069C74D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC772853DFEA0069C74D /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		D3826F642853C24500BFD607 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		D3826F652853C24500BFD607 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		D3826F662853C24500BFD607 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		D3AEEC732853D7A60069C74D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		D3AEEC752853DA000069C74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D3AEEC772853DFEA0069C74D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,10 @@
 		D3826F182853A56D00BFD607 /* MoscowCityHackApp */ = {
 			isa = PBXGroup;
 			children = (
-				D3826F632853C20500BFD607 /* Fonts */,
 				D3826F192853A56D00BFD607 /* MoscowCityHackAppApp.swift */,
+				D3AEEC792853E0C90069C74D /* ViewModel */,
+				D3AEEC722853D7860069C74D /* Service */,
+				D3826F632853C20500BFD607 /* Fonts */,
 				D3826F5C2853BFD500BFD607 /* Navigation */,
 				D3826F572853BF7400BFD607 /* Views */,
 				D3826F522853BF4200BFD607 /* Components */,
@@ -170,6 +178,7 @@
 				D3826F362853BCDF00BFD607 /* SignInView.swift */,
 				D3826F592853BFBB00BFD607 /* HomeView.swift */,
 				D3826F582853BFBA00BFD607 /* OnboardingView.swift */,
+				D3AEEC752853DA000069C74D /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +201,22 @@
 				D3826F662853C24500BFD607 /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D3AEEC722853D7860069C74D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEEC732853D7A60069C74D /* UserDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D3AEEC792853E0C90069C74D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEEC772853DFEA0069C74D /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +314,10 @@
 				D3826F372853BCDF00BFD607 /* SignInView.swift in Sources */,
 				D3826F562853BF4B00BFD607 /* VCard.swift in Sources */,
 				D3826F4F2853BF1900BFD607 /* CustomButton.swift in Sources */,
+				D3AEEC762853DA000069C74D /* ProfileView.swift in Sources */,
 				D3826F502853BF1900BFD607 /* CustomFont.swift in Sources */,
+				D3AEEC742853D7A60069C74D /* UserDataService.swift in Sources */,
+				D3AEEC782853DFEA0069C74D /* ViewModel.swift in Sources */,
 				D3826F1A2853A56D00BFD607 /* MoscowCityHackAppApp.swift in Sources */,
 				D3826F612853BFE600BFD607 /* ContentView.swift in Sources */,
 				D3826F5A2853BFBB00BFD607 /* OnboardingView.swift in Sources */,

@@ -5,6 +5,7 @@ struct OnboardingView: View {
     let button = RiveViewModel(fileName: "button", autoPlay: false)
     @State var showModal = false
     @Binding var show: Bool
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -15,7 +16,7 @@ struct OnboardingView: View {
                 .offset(y: showModal ? -50 : 0)
             
             if showModal {
-                SignInView(show: $showModal)
+                SignInView(show: $showModal, viewModel: viewModel)
                     .opacity(showModal ? 1 : 0)
                     .offset(y: showModal ? 0 : 300)
                     .overlay(
@@ -58,11 +59,11 @@ struct OnboardingView: View {
     
     var content: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Learn design & code")
+            Text("ВО\nЛОН\nТЕРС\nТВУЙ!")
                 .font(.custom("Poppins Bold", size: 60))
                 .frame(width: 260, alignment: .leading)
             
-            Text("Don’t skip design. Learn design and code, by building real apps with React and Swift. Complete courses about the best tools.")
+            Text("Наш сервис позволяет каждому желающему окунуться в удивительный мир волонтерства. Хочешь улучшить свою карму, заработать баллы на мерч и стать самым популярным волонтером в своем городе? Скорее регистрируйся!")
                 .customFont(.body)
                 .opacity(0.7)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -79,13 +80,13 @@ struct OnboardingView: View {
                         .offset(y: 10)
                 )
                 .overlay(
-                    Label("Start the course", systemImage: "arrow.forward")
+                    Label("Войти в систему", systemImage: "arrow.forward")
                         .offset(x: 4, y: 4)
                         .customFont(.headline)
                         .accentColor(.primary)
                 )
                 .onTapGesture {
-                    try? button.play(animationName: "active")
+                    button.play(animationName: "active")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                         withAnimation(.spring()) {
                             showModal.toggle()

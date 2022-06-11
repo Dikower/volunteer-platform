@@ -6,13 +6,16 @@ struct SignInView: View {
     @State var password = ""
     @State var isLoading = false
     @Binding var show: Bool
+    @ObservedObject var viewModel: ViewModel
+    
     let confetti = RiveViewModel(fileName: "confetti", stateMachineName: "State Machine 1")
     let check = RiveViewModel(fileName: "check", stateMachineName: "State Machine 1")
     
     func logIn() {
         isLoading = true
         
-        if email != "" {
+        if !email.isEmpty {
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 check.triggerInput("Check")
             }
@@ -25,9 +28,11 @@ struct SignInView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 withAnimation {
                     show.toggle()
+                    viewModel.logIn()
                 }
             }
-        } else {
+        }
+        else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 check.triggerInput("Error")
             }
@@ -41,8 +46,10 @@ struct SignInView: View {
         VStack(spacing: 24) {
             Text("Sign in")
                 .customFont(.largeTitle)
+            
             Text("Access to 240+ hours of content. Learn design and code, by building real apps with React and Swift.")
                 .foregroundColor(.secondary)
+            
             VStack(alignment: .leading) {
                 Text("Email")
                     .customFont(.subheadline)
@@ -50,6 +57,7 @@ struct SignInView: View {
                 TextField("", text: $email)
                     .customTextField(image: Image("Icon Email"))
             }
+            
             VStack(alignment: .leading) {
                 Text("Password")
                     .customFont(.subheadline)
@@ -57,6 +65,7 @@ struct SignInView: View {
                 SecureField("", text: $password)
                     .customTextField(image: Image("Icon Lock"))
             }
+            
             Button {
                 logIn()
             } label: {
