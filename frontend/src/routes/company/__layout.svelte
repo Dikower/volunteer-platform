@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa";
-  import { faHeart } from "@fortawesome/free-solid-svg-icons";
+  import { faHeart, faUserPlus } from "@fortawesome/free-solid-svg-icons";
   import ArticlePreview from "$lib/components/company/ArticlePreview.svelte";
   import { page } from "$app/stores";
 
@@ -9,7 +9,7 @@
     name: "OZON.ru",
     desc: "Технологии, маркетплейс",
     top: 1,
-    mark: 5.0,
+    mark: 5.,
     articles: [],
     info: {
       creationDate: "15 октября 1998",
@@ -52,9 +52,13 @@
             <span class="text-base-content font-light">Оценка</span>
           </div>
         </div>
-        <h2 class="my-1 text-base-content font-bold text-xl">{data.name}</h2>
-        <h4 class="text-info-content text-md">{data.desc}</h4>
-
+        <div class="flex w-full justify-between items-center">
+          <div>
+            <h2 class="my-1 text-base-content font-bold text-xl">{data.name}</h2>
+            <h4 class="text-info-content text-md">{data.desc}</h4>
+          </div>
+          <button class="btn btn-accent btn-sm"><Fa icon={faUserPlus} /> <span class="mx-2">Подписаться</span></button>
+        </div>
         <div class="flex mt-2 uppercase gap-4">
           <a class:underline={$page.routeId === 'company'} class="link link-hover" href="/company">Профиль </a>
           <a class:underline={$page.routeId === 'company/articles'} class="link link-hover"
