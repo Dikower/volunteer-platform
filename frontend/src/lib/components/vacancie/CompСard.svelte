@@ -2,16 +2,15 @@
   import Fa from "svelte-fa";
   import { faLocation, faTag } from "@fortawesome/free-solid-svg-icons";
 
-
   export let name = "Стажировка БФ Кораблик";
-  export let img = "https://storage.yandexcloud.net/korablik-club/activities/289/header/oIPQPDvfevCTKkFQp8k9RTdGKS6cFcWslcfJ8487.jpg";
+  export let image = "https://storage.yandexcloud.net/korablik-club/activities/289/header/oIPQPDvfevCTKkFQp8k9RTdGKS6cFcWslcfJ8487.jpg";
   export let location = "Москва";
   export let type = "Стажировка";
   export let persons = ["/avatars/mark.jpg", "/avatars/misha.jpg", "/avatars/nastya.jpg"];
 </script>
 
 <div class="my-5 flex w-full">
-  <img class="w-1/2 object-cover rounded-xl" alt="vacancy" src={img}>
+  <img class="w-1/2 object-cover rounded-xl" alt="vacancy" src={image}>
   <div class="flex flex-col w-1/2 ml-5">
     <h1 class="text-accent-content font-bold text-sm">{name}</h1>
     <h2 class="text-info-content text-2xs flex items-center">

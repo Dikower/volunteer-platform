@@ -1,4 +1,5 @@
 from typing import Any, Optional
+from enum import Enum
 
 from pydantic import BaseModel
 from tortoise.contrib.pydantic import pydantic_model_creator
@@ -17,6 +18,11 @@ EditUser = pydantic_model_creator(
 )
 
 
+class ProfileType(Enum):
+    person = "person"
+    company = "company"
+
+
 class Token(BaseModel):
     access_token: str
     token_type: str
@@ -25,6 +31,7 @@ class Token(BaseModel):
 class UserData(BaseModel):
     username: str
     password: str
+    profile_type: ProfileType
 
 
 class PublicHash(BaseModel):

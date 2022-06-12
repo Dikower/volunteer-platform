@@ -5,7 +5,6 @@
   export let name = 'Мастер';
   export let reason = '12 активных месяцев без перерыва' ;
   export let pic = '/animations/work_team.json';
-  // export let active = true;
   export let progress = 10;
   export let total = 12;
   let player;

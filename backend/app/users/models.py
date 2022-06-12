@@ -1,16 +1,23 @@
 from tortoise import fields, Model
 
+# TODO подписки
+# TODO Кол-во выполненных заданий
+
 
 class User(Model):
     id = fields.UUIDField(pk=True)
-    fio = fields.CharField(null=True, max_length=128)
+    name = fields.CharField(null=True, max_length=128)
     email = fields.CharField(unique=True, max_length=512)
     auth_token = fields.CharField(null=True, max_length=1024)
-    avatar = fields.CharField(null=True, max_length=512)
+    avatar = fields.CharField(null=True, max_length=512, default="https://api.lorem.space/image/face?hash=88560")
     hashed_password = fields.CharField(max_length=512)
 
+    profile_type = fields.CharField(default="person", max_length=16)  # person | company
+    interests = fields.TextField(default='["Волонтерство", "Животные", "Технологии"]')  # JSON of strings
+    completed_tasks = fields.TextField(default="[]")  # JSON of ints for chart
+
     def __repr__(self):
-        return str(self.fio)
+        return str(self.name)
 
     class PydanticMeta:
         exclude = ["hashed_password"]
