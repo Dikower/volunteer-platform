@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HCard: View {
-    var section = courseSections[0]
+    var section: CourseSection
     
     var body: some View {
         HStack(spacing: 20) {
