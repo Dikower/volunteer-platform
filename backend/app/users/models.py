@@ -11,6 +11,7 @@ class User(Model):
     auth_token = fields.CharField(null=True, max_length=1024)
     avatar = fields.CharField(null=True, max_length=512, default="https://api.lorem.space/image/face?hash=88560")
     hashed_password = fields.CharField(max_length=512)
+    creation_date = fields.DatetimeField(auto_now=True)
 
     profile_type = fields.CharField(default="person", max_length=16)  # person | company
     interests = fields.TextField(default='["Волонтерство", "Животные", "Технологии"]')  # JSON of strings

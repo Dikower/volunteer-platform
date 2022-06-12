@@ -25,6 +25,8 @@
       tasks: 1000,
       retention: 70
     },
+
+    // TODO calculate
     content: {
       blogAmount: 4,
       eventsAmount: 10

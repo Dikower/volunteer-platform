@@ -24,6 +24,11 @@ async def get_all():
     return await ActivitiesSchema.from_queryset(ActivityModel.all())
 
 
+@router.get('/by/{user_id}', response_model=List[ActivitiesSchema])
+async def get_all_company(user_id: str):
+    return await ActivitiesSchema.from_queryset(ActivityModel.filter(user_id=user_id))
+
+
 @router.post('/', response_model=ActivitiesSchema)
 async def create_activity(new_activity: CreateActivity, user: User = Depends(get_user)):
     activity = await ActivityModel.create(**new_activity.dict(), user_id=user.id)

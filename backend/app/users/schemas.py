@@ -29,8 +29,8 @@ class Token(BaseModel):
 
 
 class UserData(BaseModel):
-    username: str
-    password: str
+    username: str = 'd@d'
+    password: str = 'd'
     profile_type: ProfileType
 
 
