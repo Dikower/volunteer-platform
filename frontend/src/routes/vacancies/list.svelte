@@ -1,5 +1,9 @@
 <script lang="ts">  
   import Vacancie from "$lib/components/vacancie/Vacancie.svelte";
+  import {getActivities} from "./functions";
+  import { onMount } from "svelte";
+  import { faFilter } from "@fortawesome/free-solid-svg-icons";
+  import Fa from "svelte-fa";
 
 
   let testDataList = [
@@ -69,6 +73,7 @@
     "Собаки",
     "Городские пространства",
   ];
+  let filterState = false;
   let typeList = [
     "online", "ofline"
   ]
@@ -78,6 +83,10 @@
   let vacType = "";
   let dateStart = "";
   let dateEnd = "";
+
+  onMount(() => {
+    // let out = getActivities();
+  })
 
   function search(){
 
@@ -128,39 +137,42 @@
 
 <div class="mt-10">
 
-  <div class="w-6/12 flex flex-col mx-auto">
+  <div class="w-6/12 flex flex-col mx-auto mb-4">
     <div class="flex flex-col w-full"> 
       <p class="text-xs pb-1">Поиск по мероприятиям:</p>
       <div class="flex">
         <input type="text" class="input input-bordered w-full" placeholder="Название мероприятия..." bind:value={searchInput}>
         <button class="btn btn-info mx-2" on:click={search}>поиск</button>
+        <button class="btn btn-info w-12" on:click={() => {filterState = !filterState}}><Fa icon={faFilter} size="lg" class="m-auto"/></button>
       </div>      
     </div>
   </div>
   
-  <div class="w-6/12 mt-2 mx-auto flex flex-wrap">
-    {#each filtersList as filter, num}
-      <input id={"filter" + num} class="radioInput hidden " type="checkbox" bind:group={filters} value={filter} on:change={search}/>
-      <label for={"filter" + num} class="rounded-md border border-yellow-400 hover:bg-yellow-400 text-yellow-500 hover:text-black p-0.5 px-2 text-xs uppercase font-bold m-1 whitespace-nowrap">
-        {filter}
-      </label>
-    {/each}
-  </div>
-  <div class="w-6/12 mt-2 mx-auto flex flex-wrap">
-    {#each typeList as type, num}
-      <input id={"type" + num} class="radioInput hidden" on:click={() => {if(vacType === type){vacType=""; search()}}} type="radio" bind:group={vacType} value={type} on:change={search}/>
-      <label for={"type" + num} class="rounded-md border border-yellow-400 hover:bg-yellow-400 text-yellow-500 hover:text-black p-0.5 px-2 text-xs uppercase font-bold m-1 whitespace-nowrap">
-        {type}
-      </label>
-    {/each}
-  </div>
-  
-  <div class="w-6/12 mx-auto mt-2">
-    <input type="date" name="" id="" class="input shadow" bind:value={dateStart}>
-    -
-    <input type="date" name="" id="" class="input shadow" bind:value={dateEnd}>
-  </div>
-  
+
+  {#if filterState}
+    <div class="w-6/12 mt-2 mx-auto flex flex-wrap">
+      {#each filtersList as filter, num}
+        <input id={"filter" + num} class="radioInput hidden " type="checkbox" bind:group={filters} value={filter} on:change={search}/>
+        <label for={"filter" + num} class="rounded-md border btn-info btn-outline  hover:text-black p-0.5 px-2 text-xs uppercase font-bold m-1 whitespace-nowrap">
+          {filter}
+        </label>
+      {/each}
+    </div>
+    <div class="w-6/12 mt-2 mx-auto flex flex-wrap">
+      {#each typeList as type, num}
+        <input id={"type" + num} class="radioInput hidden" on:click={() => {if(vacType === type){vacType=""; search()}}} type="radio" bind:group={vacType} value={type} on:change={search}/>
+        <label for={"type" + num} class="rounded-md border btn-info btn-outline  hover:text-black p-0.5 px-2 text-xs uppercase font-bold m-1 whitespace-nowrap">
+          {type}
+        </label>
+      {/each}
+    </div>
+    
+    <div class="w-6/12 mx-auto mt-2">
+      <input type="date" name="" id="" class="input shadow" bind:value={dateStart}>
+      -
+      <input type="date" name="" id="" class="input shadow" bind:value={dateEnd}>
+    </div>
+  {/if}
   
   <div class="grid grid-cols-2">
     {#each dataListForShow as item}
@@ -174,8 +186,8 @@
 
 <style>
   .radioInput:checked + label {
-    border-color: #fbbc23;
-    background-color: #fbbc23;
+    border-color: #3abef8;
+    background-color: #3abef8;
     color: black;
   }
 </style>

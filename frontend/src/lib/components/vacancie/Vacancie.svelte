@@ -1,7 +1,7 @@
 <script lang="ts">
 import { goto } from "$app/navigation";
 
-import { faSun, faMoon, faLocation } from "@fortawesome/free-solid-svg-icons";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import Fa from "svelte-fa";
 
 
@@ -10,7 +10,7 @@ const dispatch = createEventDispatcher();
 
   export let data: any = {};
   onMount(() => {
-    console.log(data)
+    // console.log(data)
   })
   function openVacancie(event: any){
     if(event.target.id !== ""){
@@ -41,7 +41,7 @@ const dispatch = createEventDispatcher();
 
     <div class="mt-auto">
       {#each data.skills as skill}
-        <button class="btn btn-outline btn-warning btn-xs m-1" id={skill} on:click={() => {dispatch("addFilter", skill);}}>{skill}</button>
+        <button class="btn btn-outline btn-info btn-xs m-1" id={skill} on:click={() => {dispatch("addFilter", skill);}}>{skill}</button>
       {/each}
     </div>
   </div>

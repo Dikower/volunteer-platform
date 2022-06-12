@@ -51,16 +51,16 @@
 
   <div class="flex flex-col">
     {#if authorizationState}
-      <!-- <div class="text-sm flex my-auto">
+      <div class="text-sm flex my-auto">
         {#each companyPathList as path}
           <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
         {/each}
-      </div> -->
-      <div class="text-sm flex my-auto">
+      </div>
+      <!-- <div class="text-sm flex my-auto">
         {#each userPathList as path}
           <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
         {/each}
-      </div>
+      </div> -->
     {:else}
       <div class="text-sm flex">
         {#each authPathList as path}
