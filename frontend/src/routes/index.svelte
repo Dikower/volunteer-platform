@@ -21,7 +21,7 @@
 
   <div class="flex mt-7">
     <ArticlePreview />
-    <ArticlePreview />
+    <ArticlePreview title="Помощь животным" description="Чем обычный человек может помочь бездомным животным?" bg="#ffd166"/>
   </div>
 
   <h2 class="mt-5 mb-2 uppercase font-bold">Истории</h2>

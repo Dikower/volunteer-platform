@@ -27,7 +27,7 @@
   <div class="ml-2 w-3/5">
     <h2 class="font-bold text-accent-content">{name}</h2>
     <h3 class="text-info-content text-2xs">{reason}</h3>
-    <div>
+    <div class="flex items-center justify-between">
       <progress class="progress progress-secondary w-4/6" value={progress} max={total}></progress>
       <span class="text-info-content text-2xs">{progress} / {total} </span>
     </div>

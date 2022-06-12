@@ -56,6 +56,6 @@
   <h2 class="mt-5 mb-2 uppercase font-bold">Достижения</h2>
   <div class="flex flex-col">
     <Achievement />
-    <Achievement />
+    <Achievement name="Царь зверей" reason="500 заданий от фондов помощи животным" progress="100" total="500"/>
   </div>
 </div>
