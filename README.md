@@ -17,8 +17,12 @@ $: npx degit dikower/volunteer-platform
 ```bash
 $: docker-compose up
 ```
+## ⚒ Готовые модули
+В данном проекте используются готовые модули:
+* ![daisyUI](https://daisyui.com/)
+* ![Tailwindcss](https://tailwindcss.com/)
 
-## 🥰 Support
-You can always click on the ⭐️ of the repo and donate. I will be very glad for any support
+## 🥰 Помощь в развитии продукта
+Вы всегда можете поддержать проекв, нажав на ⭐️ в репозитории или купив нам кофе. Будем рады любой поддержке
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Dikower)
