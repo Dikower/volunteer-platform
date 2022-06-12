@@ -39,7 +39,7 @@ import { element } from "svelte/internal";
 
 
 
-<div class="w-8/12 flex mx-auto mt-12">
+<div class="w-8/12 flex mx-auto pt-12">
   <div class="w-9/12 px-28">
     <div class="flex justify-between">
       <img src={data.img} alt="" class="w-40 h-40 rounded-full">

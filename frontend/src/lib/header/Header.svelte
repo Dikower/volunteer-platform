@@ -39,8 +39,14 @@
 
 <header class="flex justify-between p-4 shadow mb-1" data-theme={theme}>
 	
-  <a sveltekit:prefetch href={"/"} class={$page.url.pathname === "/" ? "mx-2 font-bold py-2" : "mx-2 py-2"}>main</a>
+    
+  <a id="main" href={"/"} class="flex">
+    <img src={"/logo.svg"} alt="">
+    <p class="my-auto text-emerald-400 ml-2 ">Благодел</p>
+  </a>
 
+  
+  
   <!-- разделить после авторизации -->
 
   <div class="flex flex-col">
