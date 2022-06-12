@@ -18,11 +18,12 @@ const dispatch = createEventDispatcher();
 </script>
 
 
-<div class="card w-10/12 mx-auto bg-base-100 mt-10 flex-row justify-between shadow hover:shadow-md p-4" on:click={(event) => openVacancie(event)}>
+<div class="card w-10/12 mx-auto bg-base-200 mt-10 flex-row justify-between shadow hover:shadow-lg p-4" on:click={(event) => openVacancie(event)}>
   <div class="w-full flex flex-col pt-2 ">
     <div class="flex mb-1 ml-1">
       <p class="font-bold mt-auto">{data.name}</p>
       <p class="text-gray-300 ml-4 text-sm mt-auto">{data.date}</p>
+      <p class="ml-auto mr-4 text-blue-300">{data.type}</p>
     </div>
   
 
