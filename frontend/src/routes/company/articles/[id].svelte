@@ -1,6 +1,6 @@
 <script>
   import { page } from "$app/stores";
-  import SvelteMarkdown from "svelte-markdown";
+  import MdRender from "$lib/components/company/MdRender.svelte";
   import Fa from "svelte-fa";
   import { faPen, faSave } from "@fortawesome/free-solid-svg-icons";
 
@@ -40,27 +40,6 @@ Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a conv
       <span class="mx-2">Сохранить</span>
     </button>
   {/if}
+  <MdRender source={article} />
   <h1 class="card-title">{title}</h1>
-  <div class="md-wrap">
-    <SvelteMarkdown source={article} />
-  </div>
 </div>
-
-<style>
-  .md-wrap :global(h1) {
-    @apply font-bold text-xl my-2;
-  }
-
-  .md-wrap :global(h2) {
-    @apply font-semibold text-lg my-2;
-  }
-
-  .md-wrap :global(img) {
-    @apply my-5;
-  }
-
-  .md-wrap :global(p) {
-    @apply text-justify;
-  }
-
-</style>
