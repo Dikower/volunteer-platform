@@ -7,7 +7,7 @@
 
 <div class="p-2 mr-2 rounded-lg w-1/2 flex flex-col justify-between" style="background: {bg}">
   <div>
-    <h1 class="text-xs font-bold text-white">{title}</h1>
+    <h1 class="text-xs font-bold text-white hover:text-accent">{title}</h1>
     <p class="text-2xs text-slate-100 text-clip">{description}</p>
   </div>
   <div class="avatar-group -space-x-4 my-2">

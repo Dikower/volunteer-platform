@@ -11,6 +11,7 @@ specifiers:
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
+  highlight.js: ^11.5.1
   lottie-web: ^5.9.4
   postcss: ^8.4.14
   prettier: ^2.6.2
@@ -18,6 +19,8 @@ specifiers:
   svelte: ^3.44.0
   svelte-check: ^2.7.1
   svelte-fa: ^3.0.1
+  svelte-highlight: ^6.1.0
+  svelte-markdown: ^0.2.2
   svelte-preprocess: ^4.10.7
   tailwindcss: ^3.1.2
   tslib: ^2.3.1
@@ -34,6 +37,7 @@ devDependencies:
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0_eslint@8.17.0
   eslint-plugin-svelte3: 4.0.0_3aft6623ti3qaietkx5ojwfh2e
+  highlight.js: 11.5.1
   lottie-web: 5.9.4
   postcss: 8.4.14
   prettier: 2.6.2
@@ -41,6 +45,8 @@ devDependencies:
   svelte: 3.48.0
   svelte-check: 2.7.2_s3dopqgs4h45owyu2kxaf6kyfu
   svelte-fa: 3.0.1
+  svelte-highlight: 6.1.0
+  svelte-markdown: 0.2.2_svelte@3.48.0
   svelte-preprocess: 4.10.7_ul755q3dxsprj73ozc64nxdp4y
   tailwindcss: 3.1.2
   tslib: 2.4.0
@@ -243,6 +249,10 @@ packages:
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
+    dev: true
+
+  /@types/marked/4.0.3:
+    resolution: {integrity: sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==}
     dev: true
 
   /@types/node/17.0.41:
@@ -1377,6 +1387,16 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /highlight.js/11.5.0:
+    resolution: {integrity: sha512-SM6WDj5/C+VfIY8pZ6yW6Xa0Fm1tniYVYWYW1Q/DcMnISZFrC3aQAZZZFAAZtybKNrGId3p/DNbFTtcTXXgYBw==}
+    engines: {node: '>=12.0.0'}
+    dev: true
+
+  /highlight.js/11.5.1:
+    resolution: {integrity: sha512-LKzHqnxr4CrD2YsNoIf/o5nJ09j4yi/GcH5BnYz9UnVpZdS4ucMgvP61TDty5xJcFGRjnH4DpujkS9bHT3hq0Q==}
+    engines: {node: '>=12.0.0'}
+    dev: true
+
   /https-proxy-agent/5.0.1:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
@@ -1553,6 +1573,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       semver: 6.3.0
+    dev: true
+
+  /marked/4.0.16:
+    resolution: {integrity: sha512-wahonIQ5Jnyatt2fn8KqF/nIqZM8mh3oRu2+l5EANGMhu6RFjiSG52QNE2eWzFMI94HqYSgN184NurgNG6CztA==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: true
 
   /merge2/1.4.1:
@@ -2282,12 +2308,28 @@ packages:
     resolution: {integrity: sha512-p0+sp0Zzcjzqi/3cg4TsGG8MO1DE6vgNxUqcELZXMvkMgad/1VFTSKZ9QRkQMWBcIHsu3IEr16HldQFU4bJQ2g==}
     dev: true
 
+  /svelte-highlight/6.1.0:
+    resolution: {integrity: sha512-1v8UI3OyPPOk37AwYB515+6/H8TVTCY8G9p84bmo8jvqvDq8Y0G0Q7d31684yVU4NatKsMZ+2lo1VRJvdu9R8Q==}
+    dependencies:
+      highlight.js: 11.5.0
+    dev: true
+
   /svelte-hmr/0.14.12_svelte@3.48.0:
     resolution: {integrity: sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:
+      svelte: 3.48.0
+    dev: true
+
+  /svelte-markdown/0.2.2_svelte@3.48.0:
+    resolution: {integrity: sha512-bNxpG3gRbC2UjAFakIMcLEzVq5db2Md57aeU4wKCuffSfD6f7RkvtYDqbrAk2ycC55t3wykOy0E7KDuvVKyDYA==}
+    peerDependencies:
+      svelte: ^3.0.0
+    dependencies:
+      '@types/marked': 4.0.3
+      marked: 4.0.16
       svelte: 3.48.0
     dev: true
 
@@ -2501,11 +2543,11 @@ packages:
     dev: true
 
   /webidl-conversions/3.0.1:
-    resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
     dev: true
 
   /whatwg-url/5.0.0:
-    resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
@@ -2539,7 +2581,7 @@ packages:
     dev: true
 
   /wrappy/1.0.2:
-    resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
   /xtend/4.0.2:

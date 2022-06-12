@@ -6,7 +6,7 @@
 </script>
 
 <div class="p-5 shadow-md rounded-xl">
-  <h1 class="font-bold text-2xl">{title}</h1>
+  <a class="font-bold text-2xl hover:text-accent" href="articles/1">{title}</a>
   <p class="my-4 max-h-60 ">{content}</p>
   <hr>
   <div class="flex gap-4 mt-5">
