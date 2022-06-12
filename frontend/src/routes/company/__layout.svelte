@@ -60,7 +60,7 @@
           <button class="btn btn-accent btn-sm"><Fa icon={faUserPlus} /> <span class="mx-2">Подписаться</span></button>
         </div>
         <div class="flex mt-2 uppercase gap-4">
-          <a class:underline={$page.routeId === 'company'} class="link link-hover" href="/company">Профиль </a>
+          <a class:underline={$page.routeId === 'company'} class="link link-hover" href="/company">Описание</a>
           <a class:underline={$page.routeId === 'company/articles'} class="link link-hover"
              href="/company/articles">Блог <span>{data.content.blogAmount}</span></a>
           <a class:underline={$page.routeId === 'company/events'} class="link link-hover"

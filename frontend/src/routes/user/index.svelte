@@ -6,7 +6,7 @@
 </script>
 
 
-<div class="artboard phone-1 mt-5 m-auto overflow-y-auto p-4 border-solid border-accent border-2 rounded-xl">
+<!-- <div class="artboard phone-1 mt-5 m-auto overflow-y-auto p-4 border-solid border-accent border-2 rounded-xl">
   <div class="flex justify-between items-center">
     <div>
       <h1 class="mt-5 font-bold text-xl text-accent-content">Анастасия Гисина</h1>
@@ -26,10 +26,6 @@
       </div>
     </div>
   </div>
-
-<!--  <div>-->
-<!--    Соцсети-->
-<!--  </div>-->
 
   <h2 class="mt-4 mb-2 uppercase font-bold">Интересы</h2>
   <div class="grid grid-cols-3 gap-2">
@@ -58,4 +54,8 @@
     <Achievement />
     <Achievement name="Царь зверей" reason="500 заданий от фондов помощи животным" progress="100" total="500"/>
   </div>
+</div> -->
+
+<div class="bg-red-100">
+
 </div>

@@ -9,14 +9,15 @@
   let theme: any = "light";
 
   let companyPathList = [
-    {href: "/vacancies/list", name: "vacancies list"},
-    {href: "/company", name: "company"},
-    {href: "/constructor/new", name: "constructor"}
+    {href: "/vacancies/list", name: "Мероприятия"},
+    {href: "/vacancies/create", name: "Создание мероприятия"},
+    {href: "/company", name: "Профиль"},
+    {href: "/constructor/new", name: "Конструктор"}
   ];
   let userPathList = [
-    {href: "/vacancies/list", name: "vacancies list"},
-    {href: "/user", name: "user"},
-    {href: "/user/achievements", name: "achievements"}
+    {href: "/vacancies/list", name: "Мероприятия"},
+    {href: "/user", name: "Профиль"},
+    {href: "/user/achievements", name: "Достижения"}
   ];
   let authPathList = [
     {href: "/auth/signin", name: "signin"},
@@ -44,12 +45,12 @@
 
   <div class="flex flex-col">
     {#if authorizationState}
-      <div class="text-sm flex">
+      <!-- <div class="text-sm flex my-auto">
         {#each companyPathList as path}
           <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
         {/each}
-      </div>
-      <div class="text-sm flex">
+      </div> -->
+      <div class="text-sm flex my-auto">
         {#each userPathList as path}
           <a sveltekit:prefetch href={path.href} class={$page.url.pathname === path.href ? "mx-2 font-bold my-auto" : "mx-2 my-auto"}>{path.name}</a>
         {/each}
@@ -63,9 +64,9 @@
     {/if}
   </div>
 
-  <div>
+  <div class="flex">
     {#if authorizationState}
-      <button on:click={() => {authorizationState = false}}>logOut</button>
+      <button on:click={() => {authorizationState = false}} class="my-auto">Выход</button>
     {:else}
       <button on:click={() => {authorizationState = true}}>SignIn</button>
     {/if}

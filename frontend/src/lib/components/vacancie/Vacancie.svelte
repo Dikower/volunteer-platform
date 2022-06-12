@@ -22,7 +22,7 @@ const dispatch = createEventDispatcher();
 </script>
 
 
-<div class="card w-10/12 mx-auto mt-10 flex-row justify-between shadow hover:shadow-lg p-4 cursor-pointer" on:click={(event) => openVacancie(event)}>
+<div class="card w-full mx-auto mb-10 flex-row justify-between shadow hover:shadow-lg p-4 cursor-pointer" on:click={(event) => openVacancie(event)}>
   <div class="w-full flex flex-col pt-2 ">
     <div class="flex ml-1 ">
       <p class="font-bold my-auto">{data.name} &nbsp</p>
