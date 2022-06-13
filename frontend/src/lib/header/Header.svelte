@@ -10,9 +10,12 @@
 
   let companyPathList = [
     { href: "/vacancies/list", name: "Мероприятия" },
-    { href: "/vacancies/create", name: "Создание мероприятия" },
-    { href: "/company", name: "Профиль" },
-    { href: "/constructor/new", name: "Конструктор" }
+    { href: "/vacancies/create", name: "Организация" },
+    { href: "/company", name: "Компания" },
+    { href: "/constructor/new", name: "Конструктор" },
+
+    { href: "/user", name: "Профиль" },
+    { href: "/user/achievements", name: "Достижения" }
   ];
   let userPathList = [
     { href: "/vacancies/list", name: "Мероприятия" },
@@ -20,8 +23,8 @@
     { href: "/user/achievements", name: "Достижения" }
   ];
   let authPathList = [
-    { href: "/auth/signin", name: "signin" },
-    { href: "/auth/signup", name: "signup" }
+    { href: "/auth/signin", name: "Вход" },
+    { href: "/auth/signup", name: "Регистрация" }
   ];
 
   let authorizationState = true;
