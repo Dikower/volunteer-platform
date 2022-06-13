@@ -9,7 +9,7 @@
 
 <script>
   import { goto } from "$app/navigation";
-  import {bridge} from "$lib/shared";
+  import { bridge } from "$lib/shared";
   import { slide } from "svelte/transition";
   import { session } from "$app/stores";
   import * as cookie from "$lib/cookies";
@@ -78,161 +78,29 @@
   >
 </svelte:head>
 
-<div class="main-block">
-
-  <!-- svelte-ignore a11y-missing-attribute -->
+<div class="grid place-items-center">
   <img src="https://static.tildacdn.com/tild6362-3166-4430-b466-346266653936/reg.svg" alt="registration" />
-  <div class="wrapper">
-    <h1>Регистрация в наш <span class="green">сервис</span></h1>
-    <div class="form">
+  <div>
+    <h1 class="font-bold text-xl my-5">Регистрация в <span class="text-primary">Благодел</span></h1>
+    <div class="flex flex-col max-w-xs gap-2">
 
-      <input on:focus={() => errors.username = false} class:error={errors.username} bind:value={username}
+      <input class="input input-bordered w-full"
+             on:focus={() => errors.username = false} class:error={errors.username} bind:value={username}
              placeholder="E-mail" type="email">
-      <input on:focus={() => errors.password = false} class:error={errors.password} bind:value={password}
+      <input class="input input-bordered w-full"
+             on:focus={() => errors.password = false} class:error={errors.password} bind:value={password}
              placeholder="Пароль" type="password">
-      <input on:focus={() => errors.confirm = false} class:error={errors.confirm} bind:value={confirm}
+      <input class="input input-bordered w-full"
+             on:focus={() => errors.confirm = false} class:error={errors.confirm} bind:value={confirm}
              placeholder="Подтверждение пароля" type="password">
 
       {#if (errorMessage != null)}
-        <h3 transition:slide|local>{errorMessage}</h3>
+        <h3 class="text-error text-center" transition:slide|local>{errorMessage}</h3>
       {/if}
-      <div class="buttons">
-        <button on:click={submit}>Зарегистрироваться</button>
-        <a href="/auth/signin">Войти</a>
+      <div class="flex justify-between gap-2 mb-5">
+        <button class="btn btn-primary text-primary-content" on:click={submit}>Зарегистрироваться</button>
+        <a class="btn btn-outline" href="/auth/signin">Войти</a>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  .main-block {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 90vh;
-  }
-
-  img {
-    max-width: 90%;
-  }
-
-  h1 {
-    font-weight: 700;
-  }
-
-  h3 {
-    color: #E84855;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  .green {
-    color: #43DFA8;
-  }
-
-  .wrapper {
-    width: 90%;
-    max-width: 360px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    max-width: 360px;
-    width: 100%;
-    /*margin: 0 auto;*/
-    /*align-items: center;*/
-  }
-
-  input {
-    width: 90%;
-    height: 48px;
-    margin-bottom: 0.5em;
-    border-radius: 8px;
-    padding: 0 5%;
-    border: 1px solid #E1E3E6;
-    transition: all 0.6s ease;
-  }
-
-  input:focus {
-    outline: none;
-    border: 1px solid #43DFA8;
-    box-shadow: 0 0 10px rgba(67, 223, 168, 0.5);
-  }
-
-  .error {
-    border-color: #ff2121;
-    box-shadow: 0 0 10px rgb(253, 47, 47);
-  }
-
-  a {
-    padding: 0.75em 2em;
-    background: transparent;
-    border: 1px solid #131313;
-    border-radius: 5px;
-    color: #131313;
-    transition: all 0.6s ease;
-  }
-
-  a:hover {
-    outline: none;
-    text-decoration: none;
-    background-color: #43DFA8;
-    border-color: transparent;
-  }
-
-  button {
-    background-color: #131313;
-    color: #fff;
-    font-weight: 500;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75em 2em;
-    transition: all 0.6s ease;
-  }
-
-  button:hover {
-    background-color: #43DFA8;
-    color: #131313;
-  }
-
-  button:focus {
-    outline: none;
-  }
-
-  .buttons {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  @media (max-width: 1000px) {
-    img {
-      /*height: 100%;*/
-    }
-
-    .main-block {
-      flex-direction: column;
-      height: 100%;
-    }
-
-    h1 {
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 360px) {
-    img {
-      width: 70%;
-      z-index: 0;
-    }
-
-    button, a {
-      padding: 10px;
-      font-size: 15px;
-    }
-  }
-</style>

@@ -15,7 +15,6 @@
     { href: "/constructor/new", name: "Конструктор" },
 
     { href: "/user", name: "Профиль" },
-    { href: "/user/achievements", name: "Достижения" }
   ];
   let userPathList = [
     { href: "/vacancies/list", name: "Мероприятия" },
@@ -76,7 +75,7 @@
     {#if authorizationState}
       <button on:click={() => {authorizationState = false}} class="my-auto">Выход</button>
     {:else}
-      <button on:click={() => {authorizationState = true}}>Вход</button>
+<!--      <button on:click={() => {authorizationState = true}}>Вход</button>-->
     {/if}
 
     {#if theme === 'light'}
