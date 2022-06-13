@@ -2,7 +2,6 @@ import SwiftUI
 import Combine
 
 class StoryTimer: ObservableObject {
-    
     @Published var progress: Double
     @Binding var showStroiesView: Bool
     private var interval: TimeInterval

@@ -6,8 +6,5 @@ struct Achievement: Identifiable {
     let totalCount: Int
     let completedCount: Int
     let animation: String
+    let description: String
 }
-
-var achievements = [
-  Achievement(title: "Царь зверей", totalCount: 10, completedCount: 5, animation: "")
-]

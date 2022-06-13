@@ -15,10 +15,3 @@ struct BarChartCell: View {
         }
     }
 }
-//
-//struct BarChartCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BarChartCell(value: 3800, barColor: .blue)
-//            .previewLayout(.sizeThatFits)
-//    }
-//}

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ActivityDetailView: View {
     let model: Activity
+    @State var isParticipating: Bool = false
     
     var body: some View {
         ScrollView(.vertical) {
@@ -98,24 +99,30 @@ struct ActivityDetailView: View {
                     .customFont(.body)
                     .opacity(0.7)
                 
-                Text(model.tasks)
-                    .customFont(.footnote)
-                    .opacity(0.7)
-                
-                Text("Требования")
-                    .customFont(.body)
-                    .opacity(0.7)
+                VStack(alignment: .leading) {
+                    ForEach(model.tasks, id: \.self) {
+                        Text("● " + $0)
+                            .customFont(.footnote)
+                            .opacity(0.7)
+                            .padding(.vertical, 10)
+                    }
+                }
+
                 HStack {
                     Spacer()
                     Button {
-                        print("participate")
+                        isParticipating.toggle()
                     } label: {
-                        RoundedRectangle(cornerRadius: 4)
-                            .foregroundColor(Color(hex: "EF476F"))
-                            .frame(width: 220, height: 32)
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(isParticipating ? Color.white : Color(hex: "EF476F"))
+                            .frame(width: 220, height: 42)
                             .overlay(
-                                Text("Присоединиться")
-                                    .foregroundColor(.white)
+                                Text(isParticipating ? "Вы в деле!" : "Присоединиться")
+                                    .foregroundColor(isParticipating ? Color(hex: "EF476F") : .white)
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .strokeBorder(isParticipating ? Color(hex: "EF476F") : Color.clear, lineWidth: 3)
                             )
                     }
                     Spacer()

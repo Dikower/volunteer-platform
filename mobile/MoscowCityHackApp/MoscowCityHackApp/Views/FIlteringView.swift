@@ -3,9 +3,9 @@ import SwiftUI
 struct FilteringView: View {
     @State var showHot: Bool = false
     @State var selectedCategories: [String] = []
-    var categories: [String] = ["Стажировка", "Дети", "Природа"]
+    var categories: [String] = ["Стажировка", "Забота о природе", "Помощь детям"]
     @State var selectedSkills: [String] = []
-    var skills: [String] = ["Стажировка", "Дети", "Природа"]
+    var skills: [String] = ["Рисование", "Преподавание", "Веб-технологии"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -85,10 +85,4 @@ struct FilteringView: View {
         .padding(.horizontal, 30)
     }
 
-}
-
-struct FilteringView_pres: PreviewProvider {
-    static var previews: some View {
-        FilteringView()
-    }
 }
