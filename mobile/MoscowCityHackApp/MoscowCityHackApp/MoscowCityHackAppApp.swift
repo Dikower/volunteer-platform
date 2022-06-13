@@ -5,7 +5,10 @@ struct MoscowCityHackAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ViewModel())
+            NavigationView {
+                ContentView(viewModel: ViewModel())
+                    .navigationBarHidden(true)
+            }
         }
     }
     

@@ -2,8 +2,7 @@ import SwiftUI
  
 struct SearchBar: View {
     @Binding var text: String
- 
-    @State private var isEditing = false
+    @Binding var isEditing: Bool
  
     var body: some View {
         HStack {
@@ -42,22 +41,17 @@ struct SearchBar: View {
                     withAnimation {
                         self.isEditing = false
                     }
+                    
                     self.text = ""
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
  
                 }) {
-                    Text("Cancel")
+                    Text("Отмена")
+                        .foregroundColor(.black)
                 }
                 .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
             }
         }
-    }
-}
-
-
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar(text: .constant(""))
     }
 }

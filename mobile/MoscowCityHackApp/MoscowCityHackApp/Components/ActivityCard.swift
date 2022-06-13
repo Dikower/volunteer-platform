@@ -23,22 +23,24 @@ struct ActivityCard: View {
                 @unknown default:
                     Image(systemName: "exclamationmark.icloud")
                 }
+                    
             }
-            .frame(width: 156)
+            .frame(width: 140)
             .cornerRadius(20)
-            .padding(.leading, 24)
+            .padding()
             
-
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 5) {
                     Text(model.title)
                         .font(.system(size: 16))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Image("hot")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 18, height: 18)
+                    if model.isHot {
+                        Image("hot")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 21, height: 21)
+                    }
                 }
 
                 
@@ -51,8 +53,6 @@ struct ActivityCard: View {
                     Text(model.location)
                         .font(.system(size: 13))
                         .foregroundColor(Color(hex: "8291B1"))
-                    
-                    
                 }
                 
                 HStack(spacing: 11) {
@@ -65,9 +65,7 @@ struct ActivityCard: View {
                         .font(.system(size: 13))
                         .foregroundColor(Color(hex: "8291B1"))
                 }
-                
-
-                
+                                
                 HStack {
                     Spacer()
                     HStack {
@@ -78,7 +76,6 @@ struct ActivityCard: View {
                                 .frame(width: 32, height: 28)
                                 .mask(Circle())
                                 .offset(x: CGFloat($0 * -25))
-
                         }
                     }
                     .frame(maxWidth: 70)
@@ -99,11 +96,16 @@ struct ActivityCard: View {
                 
                 Spacer()
             }
-            .padding(.top, 10)
+            .padding(.top, 5)
             
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 175)
+        .background(
+            Color("Background")
+                .cornerRadius(20)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+        )
     }
     
 }

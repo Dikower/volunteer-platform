@@ -93,10 +93,6 @@ struct OnboardingView: View {
                         }
                     }
                 }
-            
-            Text("Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates.")
-                .customFont(.footnote)
-                .opacity(0.7)
         }
         .padding(40)
         .padding(.top, 40)

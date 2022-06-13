@@ -36,7 +36,6 @@ struct PickInterestsView: View {
                             .customFont(.footnote2)
                             .offset(x: -10, y: 35)
                     }
-
                 }
             }
         }

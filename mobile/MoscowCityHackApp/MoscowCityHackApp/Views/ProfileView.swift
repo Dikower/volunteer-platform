@@ -4,12 +4,15 @@ import RiveRuntime
 struct ProfileView: View {
     @Binding var show: Bool
     @ObservedObject var viewModel: ViewModel
-    
+    let user: User = mockUser
     let button = RiveViewModel(fileName: "button", autoPlay: false)
-    
+    private let gridItemLayout = [GridItem(.flexible()), GridItem(), GridItem()]
+
     var body: some View {
         ZStack {
-            content
+            ScrollView {
+                content
+            }
             
             Button {
                 withAnimation {
@@ -31,39 +34,94 @@ struct ProfileView: View {
     
     var content: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Профиль")
-                .font(.custom("Poppins Bold", size: 50))
-                .frame(width: 260, alignment: .leading)
-            
-            HStack {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text(user.name)
+                        .font(.system(size: 20, weight: .black, design: .rounded))
+
+                    Text("Регистрация:" + user.registrationDate)
+                    HStack {
+                        Text("\(user.friends.count) друг")
+                        Text("5 подписок")
+                    }
+                }
+                
                 Image("Avatar 2")
                     .resizable()
                     .mask(Circle())
                     .frame(width: 77, height: 77)
-                
-                Text("Дмитрий Шерлоков")
-                    .customFont(.title)
             }
             
-            Text("Друзья")
+            Text("Интересы")
                 .customFont(.title3)
-                .opacity(0.7)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(Array([1, 3, 4, 5, 6].shuffled().enumerated()), id: \.offset) { index, number in
-                        Image("Avatar \(number)")
-                            .resizable()
-                            .mask(Circle())
-                            .frame(width: 44, height: 44)
-                    }
+
+            LazyVGrid(columns: gridItemLayout, spacing: 15) {
+                ForEach(user.interests, id: \.self) { interest in
+                    Text(interest)
+                        .frame(width: 100, height: 37, alignment: .center)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4, style: .continuous).fill(Color.white)
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                .strokeBorder(Color.gray, lineWidth: 1)
+                        )
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+
             
-            Text("Достижения")
-                .customFont(.title3)
-                .opacity(0.7)
+            Group {
+                Text("Статистика")
+                    .customFont(.title3)
+                
+                HStack {
+                    VStack {
+                        Text("500")
+                            .customFont(.title)
+                        Text("выполненных заданий")
+                            .customFont(.footnote)
+                    }
+                    .frame(height: 58)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 4, style: .continuous).fill(Color.white)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            .strokeBorder(Color.gray, lineWidth: 1)
+                    )
+
+                    VStack {
+                        Text("10")
+                            .customFont(.title)
+                        Text("активных месяцев")
+                            .customFont(.footnote)
+                    }
+                    .frame(height: 58)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 4, style: .continuous).fill(Color.white)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            .strokeBorder(Color.gray, lineWidth: 1)
+                    )
+                }
+            }
+
+            
+            BarChart(legend: "Месяц", barColor: .blue, data: chartDataSet)
+                .frame(height: 240)
+            
+            Group {
+                Text("Достижения")
+                    .customFont(.title3)
+                    .opacity(0.7)
+                
+                ForEach(user.achievements, id: \.id) {
+                    AchievementCard(model: $0)
+                }
+            }
             
             Spacer()
             
@@ -101,3 +159,10 @@ struct ProfileView: View {
     }
     
 }
+
+//struct ProfileView_pres: PreviewProvider {
+//    @State var isShow = true
+//    static var previews: some View {
+//        ProfileView(show: $isShow, viewModel: ViewModel(), user: mockUser)
+//    }
+//}
