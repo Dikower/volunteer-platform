@@ -27,9 +27,9 @@ struct TabBar: View {
     var content: some View {
         ForEach(tabItems) { item in
             Button {
-                try? item.icon.setInput("active", value: true)
+                item.icon.setInput("active", value: true)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    try? item.icon.setInput("active", value: false)
+                    item.icon.setInput("active", value: false)
                 }
                 withAnimation {
                     selectedTab = item.tab

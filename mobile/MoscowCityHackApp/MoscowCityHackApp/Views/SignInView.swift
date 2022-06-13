@@ -5,6 +5,7 @@ struct SignInView: View {
     @State var email = ""
     @State var password = ""
     @State var isLoading = false
+    @State var isRegistration = false
     @Binding var show: Bool
     @ObservedObject var viewModel: ViewModel
     
@@ -44,11 +45,8 @@ struct SignInView: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            Text("Sign in")
+            Text(isRegistration ? "Регистрация" : "Авторизация")
                 .customFont(.largeTitle)
-            
-            Text("Access to 240+ hours of content. Learn design and code, by building real apps with React and Swift.")
-                .foregroundColor(.secondary)
             
             VStack(alignment: .leading) {
                 Text("Email")
@@ -59,7 +57,7 @@ struct SignInView: View {
             }
             
             VStack(alignment: .leading) {
-                Text("Password")
+                Text("Пароль")
                     .customFont(.subheadline)
                     .foregroundColor(.secondary)
                 SecureField("", text: $password)
@@ -71,7 +69,7 @@ struct SignInView: View {
             } label: {
                 HStack {
                     Image(systemName: "arrow.right")
-                    Text("Sign in")
+                    Text(isRegistration ? "Зарегистрироваться" : "Войти")
                         .customFont(.headline)
                 }
                 .largeButton()
@@ -79,21 +77,17 @@ struct SignInView: View {
             
             HStack {
                 Rectangle().frame(height: 1).opacity(0.1)
-                Text("OR").customFont(.subheadline2).foregroundColor(.black.opacity(0.3))
+                Text("ИЛИ").customFont(.subheadline2).foregroundColor(.black.opacity(0.3))
                 Rectangle().frame(height: 1).opacity(0.1)
             }
-            
-            Text("Sign up with Email, Apple, Google")
+            Text(isRegistration ? "Войти" : "Зарегистрироваться")
                 .customFont(.subheadline)
                 .foregroundColor(.secondary)
-            
-            HStack {
-                Image("Logo Email")
-                Spacer()
-                Image("Logo Apple")
-                Spacer()
-                Image("Logo Google")
-            }
+                .padding(.bottom, 30)
+                .onTapGesture {
+                    isRegistration.toggle()
+                }
+
         }
         .padding(30)
         .background(.regularMaterial)
