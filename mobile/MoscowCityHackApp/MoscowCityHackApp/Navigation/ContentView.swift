@@ -3,7 +3,6 @@ import RiveRuntime
 
 struct ContentView: View {
     @State var show = false
-    @State var isOpen = false
     @State var showStoriesView = false
     @ObservedObject var viewModel: ViewModel
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
@@ -11,13 +10,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(hex: "17203A").ignoresSafeArea()
-            
-            SideMenu()
-                .padding(.top, 50)
-                .opacity(isOpen ? 1 : 0)
-                .offset(x: isOpen ? 0 : -300)
-                .rotation3DEffect(.degrees(isOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
-                .ignoresSafeArea(.all, edges: .top)
             
             HomeView(showStoriesView: $showStoriesView)
                 .safeAreaInset(edge: .bottom) {
@@ -27,9 +19,6 @@ struct ContentView: View {
                     Color.clear.frame(height: 104)
                 }
                 .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .rotation3DEffect(.degrees(isOpen ? 30 : 0), axis: (x: 0, y: -1, z: 0), perspective: 1)
-                .offset(x: isOpen ? 265 : 0)
-                .scaleEffect(isOpen ? 0.9 : 1)
                 .scaleEffect(show ? 0.92 : 1)
                 .ignoresSafeArea()
             
@@ -42,29 +31,7 @@ struct ContentView: View {
                         .allowsHitTesting(false)
                 )
                 .ignoresSafeArea()
-                .offset(y: isOpen ? 300 : 0)
                 .offset(y: show ? 200 : 0)
-            
-            button.view()
-                .frame(width: 44, height: 44)
-                .mask(Circle())
-                .shadow(color: Color("Shadow").opacity(0.2), radius: 5, x: 0, y: 5)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding()
-                .offset(x: isOpen ? 216 : 0)
-                .onTapGesture {
-                    button.setInput("isOpen", value: isOpen)
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
-                        isOpen.toggle()
-                    }
-                }
-                .onChange(of: isOpen) { newValue in
-                    if newValue {
-                        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
-                    } else {
-                        UIApplication.shared.setStatusBarStyle(.darkContent, animated: true)
-                    }
-                }
             
             Image(systemName: "person")
                 .frame(width: 36, height: 36)
@@ -74,7 +41,6 @@ struct ContentView: View {
                 .shadow(color: Color("Shadow").opacity(0.2), radius: 5, x: 0, y: 5)
                 .padding()
                 .offset(y: 4)
-                .offset(x: isOpen ? 100 : 0)
                 .onTapGesture {
                     withAnimation(.spring()) {
                         show.toggle()

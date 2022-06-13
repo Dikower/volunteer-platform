@@ -70,7 +70,7 @@ struct HomeView: View {
                     .customFont(.title3)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                LazyVStack(spacing: 20) {
+                VStack(spacing: 20) {
                     ForEach(activities.filter({ activity in
                         if searchText.isEmpty {
                             return true

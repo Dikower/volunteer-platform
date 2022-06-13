@@ -10,5 +10,7 @@ struct User {
 }
 
 var mockUser = User(registrationDate: "июнь 2022", name: "Анастасия Гисина", interests: ["Дизайн", "Бег", "Tilda", "Животные", "Маркетинг", "Спорт"], friends: [
-    User(registrationDate: "август 2021", name: "Дима Дин", interests: ["Svelte", "Python"], friends: [], achievements: [.init(title: "Помог собакам", totalCount: 15, completedCount: 10, animation: "blender")])
-], achievements: [.init(title: "Еда в детдом", totalCount: 10, completedCount: 7, animation: "blender"),.init(title: "Еда в детдом", totalCount: 10, completedCount: 7, animation: "blender")])
+    User(registrationDate: "август 2021", name: "Дима Дин", interests: ["Svelte", "Python"], friends: [], achievements: [])
+], achievements: [.init(title: "Еда в детдом", totalCount: 10, completedCount: 7, animation: "food", description: "Приносить еду в детдом 10 месяцев подряд"),
+                  .init(title: "Любитель собак", totalCount: 1, completedCount: 1, animation: "love-dog", description: "Взять собаку из приюта")])
+

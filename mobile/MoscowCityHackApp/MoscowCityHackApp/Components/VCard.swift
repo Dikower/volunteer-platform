@@ -10,24 +10,16 @@ struct VCard: View {
                 .customFont(.title2)
                 .frame(maxWidth: 170, alignment: .leading)
                 .layoutPriority(1)
+
+            Spacer()
             Text(course.subtitle)
                 .opacity(0.7)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-            HStack {
-                ForEach(Array([4, 5, 6].shuffled().enumerated()), id: \.offset) { index, number in
-                    Image("Avatar \(number)")
-                        .resizable()
-                        .mask(Circle())
-                        .frame(width: 44, height: 44)
-                        .offset(x: CGFloat(index * -20))
-                }
-            }
         }
         .foregroundColor(.white)
         .padding(30)
-        .frame(width: 260, height: 280)
+        .frame(width: 260, height: 240)
         .background(
             Image("recomend_background")
                 .resizable()

@@ -46,7 +46,7 @@ struct ProfileView: View {
                     }
                 }
                 
-                Image("Avatar 2")
+                Image("Avatar 3")
                     .resizable()
                     .mask(Circle())
                     .frame(width: 77, height: 77)
@@ -120,14 +120,13 @@ struct ProfileView: View {
                 
                 ForEach(user.achievements, id: \.id) {
                     AchievementCard(model: $0)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4, style: .continuous).fill(Color.white)
+                        )
                 }
             }
             
             Spacer()
-            
-            Text("Поделиться в соц. сетях")
-                .customFont(.title3)
-                .opacity(0.7)
             
             Text("Вы можете удалить аккаунт.")
                 .customFont(.footnote)
@@ -159,10 +158,3 @@ struct ProfileView: View {
     }
     
 }
-
-//struct ProfileView_pres: PreviewProvider {
-//    @State var isShow = true
-//    static var previews: some View {
-//        ProfileView(show: $isShow, viewModel: ViewModel(), user: mockUser)
-//    }
-//}

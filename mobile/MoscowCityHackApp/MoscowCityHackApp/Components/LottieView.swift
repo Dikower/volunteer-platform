@@ -3,7 +3,7 @@ import Lottie
 
 struct LottieView: UIViewRepresentable {
     var name: String
-    var loopMode: LottieLoopMode = .playOnce
+    var loopMode: LottieLoopMode = .loop
     
     var animationView = AnimationView()
     

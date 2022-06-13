@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33493F22856D99400680C90 /* love-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = D33493F12856D99400680C90 /* love-dog.json */; };
 		D33BD1082854B1C500AE3FFA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1072854B1C500AE3FFA /* SearchBar.swift */; };
 		D33BD10A2854BBCB00AE3FFA /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1092854BBCB00AE3FFA /* ActivityCard.swift */; };
 		D33BD10C2854BDB300AE3FFA /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD10B2854BDB300AE3FFA /* Activity.swift */; };
 		D33BD10E2854F05700AE3FFA /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD10D2854F05700AE3FFA /* StoriesView.swift */; };
 		D33BD1142855323A00AE3FFA /* FIlteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1132855323A00AE3FFA /* FIlteringView.swift */; };
 		D33BD1162855FA5F00AE3FFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD1152855FA5F00AE3FFA /* User.swift */; };
+		D35408592856D860008A555E /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = D35408582856D860008A555E /* food.json */; };
 		D3826F1A2853A56D00BFD607 /* MoscowCityHackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F192853A56D00BFD607 /* MoscowCityHackAppApp.swift */; };
 		D3826F1E2853A57000BFD607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3826F1D2853A57000BFD607 /* Assets.xcassets */; };
 		D3826F212853A57000BFD607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3826F202853A57000BFD607 /* Preview Assets.xcassets */; };
@@ -35,7 +37,6 @@
 		D3826F562853BF4B00BFD607 /* VCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F542853BF4B00BFD607 /* VCard.swift */; };
 		D3826F5A2853BFBB00BFD607 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F582853BFBA00BFD607 /* OnboardingView.swift */; };
 		D3826F5B2853BFBB00BFD607 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F592853BFBB00BFD607 /* HomeView.swift */; };
-		D3826F602853BFE600BFD607 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F5D2853BFE600BFD607 /* SideMenu.swift */; };
 		D3826F612853BFE600BFD607 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F5E2853BFE600BFD607 /* ContentView.swift */; };
 		D3826F622853BFE600BFD607 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3826F5F2853BFE600BFD607 /* TabBar.swift */; };
 		D3826F672853C24500BFD607 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3826F642853C24500BFD607 /* Inter-Regular.ttf */; };
@@ -47,23 +48,23 @@
 		D3ABB6CE28565DF700CBF0A8 /* AchievementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ABB6CD28565DF700CBF0A8 /* AchievementCard.swift */; };
 		D3ABB6D028565E1D00CBF0A8 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ABB6CF28565E1D00CBF0A8 /* Achievement.swift */; };
 		D3ABB6D2285660E700CBF0A8 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ABB6D1285660E700CBF0A8 /* LottieView.swift */; };
-		D3ABB6D52856618000CBF0A8 /* blender.json in Resources */ = {isa = PBXBuildFile; fileRef = D3ABB6D42856618000CBF0A8 /* blender.json */; };
 		D3ABB6D72856675600CBF0A8 /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ABB6D62856675600CBF0A8 /* ActivityDetailView.swift */; };
 		D3AEEC742853D7A60069C74D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC732853D7A60069C74D /* UserDataService.swift */; };
 		D3AEEC762853DA000069C74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC752853DA000069C74D /* ProfileView.swift */; };
 		D3AEEC782853DFEA0069C74D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEC772853DFEA0069C74D /* ViewModel.swift */; };
-		D3C9FA982856ABD400020202 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9FA972856ABD400020202 /* NetworkManager.swift */; };
 		D3CE2FE328549D4B0044548B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D3CE2FE228549D4B0044548B /* Lottie */; };
 		D3CE2FE52854A0550044548B /* PickInterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE2FE42854A0550044548B /* PickInterestsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D33493F12856D99400680C90 /* love-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "love-dog.json"; sourceTree = "<group>"; };
 		D33BD1072854B1C500AE3FFA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D33BD1092854BBCB00AE3FFA /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
 		D33BD10B2854BDB300AE3FFA /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		D33BD10D2854F05700AE3FFA /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		D33BD1132855323A00AE3FFA /* FIlteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlteringView.swift; sourceTree = "<group>"; };
 		D33BD1152855FA5F00AE3FFA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D35408582856D860008A555E /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		D3826F162853A56D00BFD607 /* Благодел.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Благодел.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3826F192853A56D00BFD607 /* MoscowCityHackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscowCityHackAppApp.swift; sourceTree = "<group>"; };
 		D3826F1D2853A57000BFD607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		D3826F542853BF4B00BFD607 /* VCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCard.swift; sourceTree = "<group>"; };
 		D3826F582853BFBA00BFD607 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D3826F592853BFBB00BFD607 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D3826F5D2853BFE600BFD607 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		D3826F5E2853BFE600BFD607 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3826F5F2853BFE600BFD607 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D3826F642853C24500BFD607 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
@@ -98,12 +98,10 @@
 		D3ABB6CD28565DF700CBF0A8 /* AchievementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCard.swift; sourceTree = "<group>"; };
 		D3ABB6CF28565E1D00CBF0A8 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		D3ABB6D1285660E700CBF0A8 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		D3ABB6D42856618000CBF0A8 /* blender.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blender.json; sourceTree = "<group>"; };
 		D3ABB6D62856675600CBF0A8 /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
 		D3AEEC732853D7A60069C74D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		D3AEEC752853DA000069C74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D3AEEC772853DFEA0069C74D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		D3C9FA972856ABD400020202 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D3CE2FE42854A0550044548B /* PickInterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickInterestsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				D3826F5E2853BFE600BFD607 /* ContentView.swift */,
-				D3826F5D2853BFE600BFD607 /* SideMenu.swift */,
 				D3826F5F2853BFE600BFD607 /* TabBar.swift */,
 			);
 			path = Navigation;
@@ -255,7 +252,8 @@
 		D3ABB6D32856613D00CBF0A8 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				D3ABB6D42856618000CBF0A8 /* blender.json */,
+				D33493F12856D99400680C90 /* love-dog.json */,
+				D35408582856D860008A555E /* food.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -264,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				D3AEEC732853D7A60069C74D /* UserDataService.swift */,
-				D3C9FA972856ABD400020202 /* NetworkManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -344,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3826F442853BEE100BFD607 /* shapes.riv in Resources */,
-				D3ABB6D52856618000CBF0A8 /* blender.json in Resources */,
+				D33493F22856D99400680C90 /* love-dog.json in Resources */,
 				D3826F422853BEE100BFD607 /* icons.riv in Resources */,
 				D3826F412853BEE100BFD607 /* house.riv in Resources */,
 				D3826F682853C24500BFD607 /* Inter-SemiBold.ttf in Resources */,
@@ -354,6 +351,7 @@
 				D3826F692853C24500BFD607 /* Poppins-Bold.ttf in Resources */,
 				D3826F672853C24500BFD607 /* Inter-Regular.ttf in Resources */,
 				D3826F3A2853BEBB00BFD607 /* confetti.riv in Resources */,
+				D35408592856D860008A555E /* food.json in Resources */,
 				D3826F452853BEE100BFD607 /* check.riv in Resources */,
 				D3826F1E2853A57000BFD607 /* Assets.xcassets in Resources */,
 			);
@@ -372,7 +370,6 @@
 				D33BD1162855FA5F00AE3FFA /* User.swift in Sources */,
 				D3ABB6CC2856197600CBF0A8 /* BarChartCell.swift in Sources */,
 				D3826F622853BFE600BFD607 /* TabBar.swift in Sources */,
-				D3826F602853BFE600BFD607 /* SideMenu.swift in Sources */,
 				D33BD1142855323A00AE3FFA /* FIlteringView.swift in Sources */,
 				D33BD10A2854BBCB00AE3FFA /* ActivityCard.swift in Sources */,
 				D3826F352853BC9300BFD607 /* Extensions.swift in Sources */,
@@ -381,7 +378,6 @@
 				D3826F562853BF4B00BFD607 /* VCard.swift in Sources */,
 				D33BD10E2854F05700AE3FFA /* StoriesView.swift in Sources */,
 				D3ABB6D72856675600CBF0A8 /* ActivityDetailView.swift in Sources */,
-				D3C9FA982856ABD400020202 /* NetworkManager.swift in Sources */,
 				D3ABB6CA2856195700CBF0A8 /* ChartData.swift in Sources */,
 				D3ABB6CE28565DF700CBF0A8 /* AchievementCard.swift in Sources */,
 				D3826F4F2853BF1900BFD607 /* CustomButton.swift in Sources */,
