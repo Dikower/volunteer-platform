@@ -4,7 +4,7 @@
 
 ## ⚙️ Установка
 
-Скачайте шаблон используя _git clone_ или _degit_
+Скачайте проект используя _git clone_ или _degit_
 
 ```bash
 $: npx degit dikower/volunteer-platform
