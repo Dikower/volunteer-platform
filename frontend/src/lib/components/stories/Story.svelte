@@ -76,7 +76,7 @@
   let storyCard;
 </script>
 
-<div class="relative border-accent mr-4 grid place-items-center cursor-pointer" on:click={open}>
+<div class="relative border-accent mr-4 grid place-items-center cursor-pointer max-w-1xl" on:click={open}>
   <img
     alt="story" class:border-accent={!watched}
     class="border-solid border-2 rounded-xl object-fill w-full h-full rounded-xl" src={screens[0]}>

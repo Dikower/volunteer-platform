@@ -59,3 +59,32 @@ export const testDataList = [
 export const dataIndex = {
     descripton: "OZON (Ozon Holdings PLC) — старейший российский универсальный интернет-магазин; по данным исследовательского агентства Data Insight, второй по обороту онлайн-магазин России[3][4]. Компания появилась в 1998 году. Ozon торгует более 80 млн товарных наименований. "
   }
+
+  export const dataLayout = {
+    img: "/companies/ozon.png",
+    name: "OZON.ru",
+    desc: "Технологии, маркетплейс",
+    top: 1,
+    mark: 5.,
+    articles: [],
+    info: {
+      creationDate: "15 октября 1998",
+      location: "Россия",
+      site: { short: "ozon.ru", full: "https://ozon.ru" },
+      staff: "5000-1000 человек",
+      regDate: "9 августа 2008",
+      responsible: "Гисина Анастасия"
+    },
+    participation: {
+      volunteers: 12_924,
+      business: 30,
+      tasks: 1000,
+      retention: 70
+    },
+
+    // TODO calculate
+    content: {
+      blogAmount: 4,
+      eventsAmount: 10
+    }
+  };

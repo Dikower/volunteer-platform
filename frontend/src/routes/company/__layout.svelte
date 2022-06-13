@@ -1,6 +1,7 @@
 <script>
   import Fa from "svelte-fa";
   import { faHeart, faUserPlus, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+  import ArticlePreview from "$lib/components/company/ArticlePreview.svelte";
   import { page } from "$app/stores";
   import { dataLayout as data } from "./data";
 </script>

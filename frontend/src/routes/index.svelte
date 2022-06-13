@@ -6,7 +6,7 @@
   import StoryList from "$lib/components/stories/StoryList.svelte";
 </script>
 
-<div class="artboard phone-1 m-auto p-4 overflow-y-auto ">
+<div class="w-full max-w-lg m-auto p-4 overflow-y-auto ">
   <div class="flex justify-between">
     <label class="flex items-center border border-base-300 text-neutral px-3 w-5/6 rounded-md">
       <Fa icon={faMagnifyingGlass} />
