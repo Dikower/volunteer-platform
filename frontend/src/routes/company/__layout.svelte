@@ -1,38 +1,8 @@
 <script>
   import Fa from "svelte-fa";
   import { faHeart, faUserPlus, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-  import ArticlePreview from "$lib/components/company/ArticlePreview.svelte";
   import { page } from "$app/stores";
-
-  let data = {
-    img: "/companies/ozon.png",
-    name: "OZON.ru",
-    desc: "Технологии, маркетплейс",
-    top: 1,
-    mark: 5.,
-    articles: [],
-    info: {
-      creationDate: "15 октября 1998",
-      location: "Россия",
-      site: { short: "ozon.ru", full: "https://ozon.ru" },
-      staff: "5000-1000 человек",
-      regDate: "9 августа 2008",
-      responsible: "Гисина Анастасия"
-    },
-    participation: {
-      volunteers: 12_924,
-      business: 30,
-      tasks: 1000,
-      retention: 70
-    },
-
-    // TODO calculate
-    content: {
-      blogAmount: 4,
-      eventsAmount: 10
-    }
-
-  };
+  import { dataLayout as data } from "./data";
 </script>
 
 <div class="max-w-screen-xl w-full m-auto">

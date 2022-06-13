@@ -1,51 +1,9 @@
 <script>
   import Fa from "svelte-fa";
   import { faUserPlus, faPen } from "@fortawesome/free-solid-svg-icons";
-  import StoryList from "$lib/components/stories/StoryList.svelte";
   import Achievement from "$lib/components/user/Achievement.svelte";
-  import { element } from "svelte/internal";
+  import {data} from './data';
 
-  let data = {
-    first_name: "Анастасия",
-    last_name: "Гисина",
-    friends: "5",
-    subscriptions: "12",
-    img: "/avatars/nastya.jpg",
-    date_registration: "2022-06-14",
-    active_month: "2",
-    complete_tasks: "7",
-    achievements: [
-      {
-        name: "Мастер",
-        description: "12 активных месяцев без перерыва",
-        progress: "10",
-        total: "12",
-        img: "/achievements/master.png"
-      },
-      {
-        name: "Царь зверей",
-        description: "500 заданий от благотворительных фондов помощи животным",
-        progress: "100",
-        total: "500",
-        img: "/achievements/king.png"
-      }
-    ],
-    graph: [
-      { month: "Jan", count: 10, max: 15 },
-      { month: "Feb", count: 15, max: 15 },
-      { month: "Mar", count: 13, max: 15 },
-      { month: "Apr", count: 14, max: 15 },
-      { month: "May", count: 5, max: 15 },
-      { month: "Jun", count: 6, max: 15 },
-      { month: "Jul", count: 12, max: 15 },
-      { month: "Aug", count: 14, max: 15 },
-      { month: "Sep", count: 6, max: 15 },
-      { month: "Oct", count: 15, max: 15 },
-      { month: "Now", count: 0, max: 15 },
-      { month: "Dec", count: 0, max: 15 }
-    ],
-    interests: ["Дизайн", "Бег", "Животные"]
-  };
   let colorsForGraph = ["bg-red-400", "bg-blue-400", "bg-yellow-400", "bg-green-400"];
 </script>
 

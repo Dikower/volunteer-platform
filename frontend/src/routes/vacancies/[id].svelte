@@ -2,36 +2,8 @@
   import { faSun, faMoon, faLocation } from "@fortawesome/free-solid-svg-icons";
   import MdRender from "$lib/components/company/MdRender.svelte";
   import Fa from "svelte-fa";
-  let data = {
-      id: 3,
-      name: "Кормежка бродячих собак",
-      description: "Необходимо покормить бродячих собак в районе Одинцово.",
-      date: "2022-12-21",
-      location: "Одинцово ул. Лесная д. 42",
-      type: "Стажировка",
-      tasks: `
-      Участие в разработке стратегии привлечения средств от компаний
-      Мониторинг рынка и поиск потенциальных партнеров, в т.ч. «холодный» поиск,
-      формирование отношений с нуля, привлечение, формирование базы
-      Подготовка предложения для потенциальных корпоративных партнеров
-      Ведение переговоров с существующими и потенциальными компаниями-партнерами,
-      подготовка и передача партнерам информационных материалов и документов,
-      необходимых для оформления сотрудничества
-      Ответственность за подписание и переподписание соглашений с партнерами
-      Координация маркетинговых проектов c существующими компаниями-партнерами
-      Участие в подготовке благотворительных и корпоративных мероприятий компаний-партнеров
-      Совершенствование имеющихся инструментов привлечения корпоративной поддержки (спонсорские пакеты, благотворительные открытки и др.), разработка новых
-      Координация работы подрядчиков (агентства, сторонние специалисты, волонтеры др.) в рамках проектов и акций, направленных на работу с корпоративными партнерами
-      Мониторинг рынка на предмет появления новых трендов и технологий в привлечении корпоративных доноров, представление дайджеста руководству с описанием
-      возможностей реализации в фонде.`,
-      participants: 12,
-      participation_type: "ofline",
-      company: {name: "БФ Кораблик", description: "детский благотворительный фонд", rating: "5.0", grade: "1 место", img: "https://media-exp1.licdn.com/dms/image/C4D0BAQG6MLcBzJThug/company-logo_200_200/0/1519889862676?e=2147483647&v=beta&t=De-zc0-89y0BlNZSiD0S7adA43I35nsflrZSR4blNlU"},
-      image: "https://www.ptichka.ru/data/cache/2017dec/06/12/40990_15810-600x0.jpg",
-      skills: ["Собаки", "Забота о ближних", "Свежий воздух"]
-    }
+  import { dataId as data } from "./data";
 </script>
-
 
 
 <div class="shadow mx-auto w-11/12 mt-12 p-8 flex rounded-lg">
@@ -55,22 +27,23 @@
       </div>
     </div>
   </div>
-  
+
   <div class="w-full flex flex-col rounded-lg pl-1">
     <div class="flex">
       <p class="font-bold mt-auto">{data.name}</p>
-      
+
       <p class="text-gray-300 text-sm ml-auto">{data.date}</p>
     </div>
     <div class="flex mb-1">
       {#if data.location !== ""}
-        <p class="text-xs my-auto mr-2 flex"><Fa icon={faLocation} size="lg" class="mr-1"/>{data.location}</p>
+        <p class="text-xs my-auto mr-2 flex">
+          <Fa icon={faLocation} size="lg" class="mr-1" />{data.location}</p>
       {/if}
 
       <p class="ml-auto text-blue-300">{data.participation_type}</p>
-      
+
     </div>
-    
+
 
     <p class="text-sm my-1">{data.description}</p>
 
@@ -79,7 +52,7 @@
       <!-- <MdRender source={data.tasks}/> -->
       <p>{data.tasks}</p>
     </div>
-    
+
     <div class="mt-auto">
       {#each data.skills as skill}
         <button class="btn btn-outline btn-warning btn-xs m-1" id={skill}>{skill}</button>
