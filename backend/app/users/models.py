@@ -15,7 +15,7 @@ class User(Model):
 
     profile_type = fields.CharField(default="person", max_length=16)  # person | company
     interests = fields.TextField(default='["Волонтерство", "Животные", "Технологии"]')  # JSON of strings
-    completed_tasks = fields.TextField(default="[]")  # JSON of ints for chart
+    completed_tasks = fields.TextField(default="[1, 4, 3, 7, 10]")  # JSON of ints for chart
 
     def __repr__(self):
         return str(self.name)

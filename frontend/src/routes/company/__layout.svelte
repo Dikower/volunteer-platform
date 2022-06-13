@@ -59,7 +59,7 @@
             <h2 class="my-1 text-base-content font-bold text-xl">{data.name}</h2>
             <h4 class="text-info-content text-md">{data.desc}</h4>
           </div>
-          <button class="btn btn-accent btn-sm"><Fa icon={faUserPlus} /> <span class="mx-2">Подписаться</span></button>
+          <button class="btn btn-accent text-primary-content btn-sm"><Fa icon={faUserPlus} /> <span class="mx-2">Подписаться</span></button>
         </div>
         <div class="flex mt-2 uppercase gap-4">
           <a class:underline={$page.routeId === 'company'} class="link link-hover" href="/company">Описание</a>

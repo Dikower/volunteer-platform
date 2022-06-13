@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <button class="mt-2 bg-accent rounded-md p-2 text-xs w-fit hover:bg-neutral hover:text-primary-content transition-all">
+    <button class="mt-2 bg-accent rounded-md p-2 text-xs text-primary-content w-fit hover:bg-neutral hover:text-primary-content transition-all">
       Присоединиться
     </button>
   </div>
