@@ -42,3 +42,15 @@
 * Также есть [профиль волонтера](https://procharity.ru/about_project/volunteers_list/detail.php?ID=9642) с навыками и ачивками. 
 
 **Наше УТП:** расширенные инструменты для построения сообществ волонтеров и оптимизации работы НКО
+
+## Запуск проекта
+Скачайте проект используя _git clone_ или _degit_
+
+```bash
+$: npx degit dikower/volunteer-platform
+```
+Установите _Docker_, затем запустите
+
+```bash
+$: docker-compose up
+```
