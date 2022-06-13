@@ -18,13 +18,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molesti
 Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
 
 `;
-  let editing = true;
+  let editing = false;
 </script>
 
 <div class="flex flex-col">
   {#if !editing}
     <button
-      class="btn btn-accent btn-md self-end"
+      class="btn btn-accent btn-md self-end text-primary-content"
       on:click={() => editing = true}
     >
       <Fa icon={faPen} />
@@ -41,7 +41,7 @@ Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a conv
 
     <div class="fixed bg-base-100 right-5 top-5 w-2/6 h-full border border-accent">
       <button
-        class="btn mx-5 mt-5 btn-accent btn-md self-end "
+        class="btn mx-5 mt-5 btn-accent btn-md self-end text-primary-content"
         on:click={() => editing = false}
       >
         <Fa icon={faSave} />

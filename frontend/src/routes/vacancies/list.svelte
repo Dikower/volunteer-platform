@@ -16,7 +16,7 @@
       type: "Стажировка",
       tasks: "",
       participants: 2,
-      participation_type: "ofline",
+      participation_type: "offline",
       company: {},
       image: "http://room-number.ru/wp-content/uploads/2017/10/park-gorkogo-22.jpg",
       skills: ["Свежий воздух", "Городские пространства"]
@@ -58,7 +58,7 @@
       Мониторинг рынка на предмет появления новых трендов и технологий в привлечении корпоративных доноров, представление дайджеста руководству с описанием
       возможностей реализации в фонде.`,
       participants: 12,
-      participation_type: "ofline",
+      participation_type: "offline",
       company: {name: "БФ Кораблик", description: "детский благотворительный фонд", rating: "5.0", grade: "1 место", img: "https://media-exp1.licdn.com/dms/image/C4D0BAQG6MLcBzJThug/company-logo_200_200/0/1519889862676?e=2147483647&v=beta&t=De-zc0-89y0BlNZSiD0S7adA43I35nsflrZSR4blNlU"},
       image: "https://www.ptichka.ru/data/cache/2017dec/06/12/40990_15810-600x0.jpg",
       skills: ["Собаки", "Забота о ближних", "Свежий воздух"]
@@ -75,7 +75,7 @@
   ];
   let filterState = false;
   let typeList = [
-    "online", "ofline"
+    "online", "offline"
   ]
 
   let searchInput = "";
@@ -135,15 +135,14 @@
 
 <svelte:window on:keydown={handleKeydown}/>
 
-<div class="mt-10">
-
-  <div class="w-6/12 flex flex-col mx-auto mb-4">
+<div class="p-5">
+  <div class="w-full sm:w-6/12 flex flex-col mx-auto mb-4">
     <div class="flex flex-col w-full"> 
       <p class="text-xs pb-1">Поиск по мероприятиям:</p>
       <div class="flex">
         <input type="text" class="input input-bordered w-full" placeholder="Название мероприятия..." bind:value={searchInput}>
-        <button class="btn btn-info mx-2" on:click={search}>поиск</button>
-        <button class="btn btn-info w-12" on:click={() => {filterState = !filterState}}><Fa icon={faFilter} size="lg" class="m-auto"/></button>
+        <button class="btn btn-accent text-primary-content mx-2" on:click={search}>Поиск</button>
+        <button class="btn btn-accent text-primary-content w-12" on:click={() => {filterState = !filterState}}><Fa icon={faFilter} size="lg" class="m-auto"/></button>
       </div>      
     </div>
   </div>
@@ -167,14 +166,14 @@
       {/each}
     </div>
     
-    <div class="w-6/12 mx-auto mt-2">
+    <div class="w-6/12 mx-auto mt-2 flex justify-center items-center gap-2 mb-4">
       <input type="date" name="" id="" class="input shadow" bind:value={dateStart}>
-      -
+      <span>-</span>
       <input type="date" name="" id="" class="input shadow" bind:value={dateEnd}>
     </div>
   {/if}
   
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-1 sm:grid-cols-2">
     {#each dataListForShow as item}
       <div class="w-11/12 mx-auto">
         <Vacancie data={item} on:addFilter={(newFilter) => {filters.push(newFilter.detail); filters = filters; search();} }/>

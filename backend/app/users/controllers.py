@@ -1,3 +1,4 @@
+from typing import List
 from datetime import timedelta
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -60,7 +61,7 @@ async def destroy(user=Depends(get_user)):
     return {'ok': True}
 
 
-@router.get('/all')
+@router.get('/all', response_model=List[PrivateUser])
 async def all_users():
     return await PrivateUser.from_queryset(User.all())
 
