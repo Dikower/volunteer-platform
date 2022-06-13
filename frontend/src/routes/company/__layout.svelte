@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa";
-  import { faHeart, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+  import { faHeart, faUserPlus, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
   import ArticlePreview from "$lib/components/company/ArticlePreview.svelte";
   import { page } from "$app/stores";
 
@@ -37,7 +37,7 @@
 
 <div class="max-w-screen-xl w-full m-auto">
   <div class="flex w-full p-5 gap-6">
-    <div class="flex flex-col w-4/6 gap-6">
+    <div class="flex flex-col w-full sm:w-4/6 gap-6">
       <header class=" flex flex-col shadow-md p-5 rounded-lg">
         <div class="flex w-full items-center my-2 gap-6">
           <img alt="company logo rounded-xl border border-accent p-1" src={data.img}>
@@ -53,15 +53,28 @@
             </h3>
             <span class="text-base-content font-light">Оценка</span>
           </div>
+          <div class="flex flex-col items-center">
+            <div class="flex gap-1">
+              <button class="btn btn-accent btn-square btn-outline btn-xs">
+                <Fa icon={faArrowDown} />
+              </button>
+              <button class="btn btn-primary btn-square btn-outline btn-xs">
+                <Fa icon={faArrowUp} />
+              </button>
+            </div>
+            <span class="text-base-content font-light">Карма</span>
+          </div>
         </div>
         <div class="flex w-full justify-between items-center">
           <div>
             <h2 class="my-1 text-base-content font-bold text-xl">{data.name}</h2>
             <h4 class="text-info-content text-md">{data.desc}</h4>
           </div>
-          <button class="btn btn-accent text-primary-content btn-sm"><Fa icon={faUserPlus} /> <span class="mx-2">Подписаться</span></button>
+          <button class="btn btn-accent text-primary-content btn-sm">
+            <Fa icon={faUserPlus} />
+            <span class="mx-2">Подписаться</span></button>
         </div>
-        <div class="flex mt-2 uppercase gap-4">
+        <div class="flex mt-2 uppercase gap-4 flex-wrap">
           <a class:underline={$page.routeId === 'company'} class="link link-hover" href="/company">Описание</a>
           <a class:underline={$page.routeId === 'company/articles'} class="link link-hover"
              href="/company/articles">Блог <span>{data.content.blogAmount}</span></a>
@@ -72,7 +85,7 @@
       <slot />
 
     </div>
-    <div class="flex flex-col gap-5 w-2/6">
+    <div class="hidden sm:flex flex-col gap-5 w-2/6">
       <div class="flex h-fit flex-col shadow-md p-5 rounded-lg">
         <h3 class="uppercase text-base-content font-semibold">Информация</h3>
         <hr class="my-2" />
